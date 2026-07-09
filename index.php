@@ -85,12 +85,16 @@ switch (strtolower($url[0])) {
         break;
 
     case "dashboard":
+        if (!isset($_SESSION['user_id']) && !isset($_SESSION['role'])) {
+            header("Location: /user/login");
+            exit;
+        }
         $dashboardController->index();
         break;
 
     case "sales":
         if (!isset($_SESSION['role'])) {
-            header("Location: /POSu/user/login");
+            header("Location: /user/login");
             exit;
         }
         $salesController->salesReport();
@@ -116,6 +120,10 @@ case "discounts":
 
 
     default:
+        if (empty($url[0]) || $url[0] === '') {
+            header("Location: /user/login");
+            exit;
+        }
         include "404.php";
         break;
 }
