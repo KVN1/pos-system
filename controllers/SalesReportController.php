@@ -1,6 +1,6 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/SalesReportModel.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/controllers/ActivityLogController.php';
+require_once __DIR__ . '/../SalesReportModel.php';
+require_once __DIR__ . '/../ActivityLogController.php';
 
 class SalesReportController {
     private $model;

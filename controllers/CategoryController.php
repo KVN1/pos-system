@@ -3,8 +3,8 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/CategoryModel.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/controllers/ActivityLogController.php';
+require_once __DIR__ . '/../CategoryModel.php';
+require_once __DIR__ . '/../ActivityLogController.php';
 
 class CategoryController {
     private $categoryModel;
@@ -28,7 +28,7 @@ class CategoryController {
     // Show active categories page
     public function categories() {
         $categories = $this->categoryModel->getActiveCategories();
-        require_once($_SERVER['DOCUMENT_ROOT'] . '/POSu/views/categories.php');
+        require_once(__DIR__ . '/../categories.php');
     }
 
     // Fetch active categories
@@ -73,12 +73,12 @@ class CategoryController {
                 }
                 $_SESSION['flash_message'] = "Category '$categoryName' updated successfully!";
                 $_SESSION['flash_type'] = "success";
-                header("Location: /POSu/Categories");
+                header("Location: /Categories");
                 exit;
             } else {
                 $_SESSION['flash_message'] = "Failed to update category.";
                 $_SESSION['flash_type'] = "error";
-                header("Location: /POSu/Categories");
+                header("Location: /Categories");
                 exit;
             }
         }
@@ -94,12 +94,12 @@ class CategoryController {
                 }
                 $_SESSION['flash_message'] = "Category deactivated successfully!";
                 $_SESSION['flash_type'] = "success";
-                header("Location: /POSu/Categories");
+                header("Location: /Categories");
                 exit;
             } else {
                 $_SESSION['flash_message'] = "Failed to deactivate category.";
                 $_SESSION['flash_type'] = "error";
-                header("Location: /POSu/Categories");
+                header("Location: /Categories");
                 exit;
             }
         }
@@ -115,12 +115,12 @@ class CategoryController {
                 }
                 $_SESSION['flash_message'] = "Category restored successfully!";
                 $_SESSION['flash_type'] = "success";
-                header("Location: /POSu/views/settings.php");
+                header("Location: /views/settings.php");
                 exit;
             } else {
                 $_SESSION['flash_message'] = "Failed to restore category.";
                 $_SESSION['flash_type'] = "error";
-                header("Location: /POSu/views/settings.php");
+                header("Location: /views/settings.php");
                 exit;
             }
         }

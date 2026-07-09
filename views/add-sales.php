@@ -13,8 +13,8 @@ if (session_status() === PHP_SESSION_NONE) {
 endif;
 
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/controllers/ProductController.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/DiscountModel.php';
+require_once __DIR__ . '/../ProductController.php';
+require_once __DIR__ . '/../DiscountModel.php';
 
 $productController = new ProductController();
 $products = $productController->indexForSales();

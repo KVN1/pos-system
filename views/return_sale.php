@@ -1,10 +1,10 @@
 <?php
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/controllers/SalesReportController.php';
+require_once __DIR__ . '/../SalesReportController.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     $_SESSION['error'] = 'Invalid request method.';
-    header('Location: /POSu/views/sales.php');
+    header('Location: /views/sales.php');
     exit;
 }
 
@@ -14,7 +14,7 @@ $user_id = $_SESSION['user_id'] ?? null;
 
 if (!$sale_id || !$user_id) {
     $_SESSION['error'] = 'Sale or user not found.';
-    header('Location: /POSu/views/sales.php');
+    header('Location: /views/sales.php');
     exit;
 }
 
@@ -27,6 +27,6 @@ if ($result) {
     $_SESSION['error'] = 'Failed to return sale.';
 }
 
-header('Location: /POSu/views/sales.php');
+header('Location: /views/sales.php');
 exit;
 ?>

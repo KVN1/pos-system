@@ -43,7 +43,7 @@ public function do_login() {
 
     if (!$user || $user['status'] !== 'Active') {
         $_SESSION['login_error'] = $genericError;
-        header("Location: /POSu/user/login");
+        header("Location: /user/login");
         exit;
     }
 
@@ -55,7 +55,7 @@ if (!empty($user['lock_until']) && strtotime($user['lock_until']) > time()) {
     $_SESSION['login_error'] = "Account locked. Try again in <span id='countdown'>$remainingSeconds</span> seconds.";
     $_SESSION['lock_remaining'] = $remainingSeconds; // store for JS
 
-    header("Location: /POSu/user/login");
+    header("Location: /user/login");
     exit;
 }
 
@@ -66,7 +66,7 @@ if (!empty($user['lock_until']) && strtotime($user['lock_until']) > time()) {
     $_SESSION['login_error'] = "Account locked. Try again in <span id='countdown'>$remainingSeconds</span> seconds.";
     $_SESSION['lock_remaining'] = $remainingSeconds;
 
-    header("Location: /POSu/user/login");
+    header("Location: /user/login");
     exit;
 }
 
@@ -87,7 +87,7 @@ if (!password_verify($password, $user['password'])) {
         $_SESSION['login_error'] = "Incorrect username or password. $remaining attempt(s) left.";
     }
 
-    header("Location: /POSu/user/login");
+    header("Location: /user/login");
     exit;
 }
 
@@ -100,7 +100,7 @@ $this->userModel->resetLoginAttempts($user['user_id']);
     $_SESSION['username'] = $user['username'];
     $_SESSION['role'] = $user['role'];
 
-    header("Location: /POSu/dashboard");
+    header("Location: /dashboard");
     exit;
 }
 
@@ -126,14 +126,14 @@ public function do_register() {
         // Required fields check
         if (empty($firstName) || empty($lastName) || empty($username) || empty($password) || empty($confirmPassword) || empty($role)) {
             $_SESSION['register_error'] = "All fields are required.";
-            header("Location: /POSu/index.php?url=user/register");
+            header("Location: /index.php?url=user/register");
             exit;
         }
 
         // Role validation
         if (!in_array($role, ['admin', 'cashier'])) {
             $_SESSION['register_error'] = "Invalid role selected.";
-            header("Location: /POSu/index.php?url=user/register");
+            header("Location: /index.php?url=user/register");
             exit;
         }
 
@@ -142,14 +142,14 @@ public function do_register() {
             $adminKey = trim($_POST['admin_key'] ?? '');
             if ($adminKey !== '112345') {
                 $_SESSION['register_error'] = "Invalid Admin Secret Key.";
-                header("Location: /POSu/index.php?url=user/register");
+                header("Location: /index.php?url=user/register");
                 exit;
             }
         }
 
         if ($this->userModel->usernameExists($username)) {
                 $_SESSION['register_error'] = "Username already exists. Please choose another.";
-                header("Location: /POSu/index.php?url=user/register");
+                header("Location: /index.php?url=user/register");
                 exit;
             }
 
@@ -157,7 +157,7 @@ public function do_register() {
         // Password matching
         if ($password !== $confirmPassword) {
             $_SESSION['register_error'] = "Passwords do not match.";
-            header("Location: /POSu/index.php?url=user/register");
+            header("Location: /index.php?url=user/register");
             exit;
         }
 
@@ -167,18 +167,18 @@ public function do_register() {
         // Register user
         if ($this->userModel->registerUser($firstName, $lastName, $username, $hashedPassword, $role)) {
             $_SESSION['success'] = "Registration successful. Please log in.";
-            header("Location: /POSu/index.php?url=user/login");
+            header("Location: /index.php?url=user/login");
             exit;
         } else {
             $_SESSION['register_error'] = "Something went wrong. Please try again.";
-            header("Location: /POSu/index.php?url=user/register");
+            header("Location: /index.php?url=user/register");
             exit;
         }
          }
 
         if (!preg_match($pattern, $password)) {
             $_SESSION['register_error'] = "Password must be at least 8 characters long and include uppercase, lowercase, number, and symbol.";
-            header("Location: /POSu/views/register.php");
+            header("Location: /views/register.php");
             exit();
         }
 
@@ -189,7 +189,7 @@ public function do_register() {
     // Dashboard
     public function dashboard() {
         if (!isset($_SESSION['user_id'])) {
-            header("Location: /POSu/user/login");
+            header("Location: /user/login");
             exit;
         }
         require_once __DIR__ . '/../views/dashboard.php';
@@ -199,7 +199,7 @@ public function do_register() {
     public function logout() {
         session_unset();
         session_destroy();
-        header("Location: /POSu/user/login");
+        header("Location: /user/login");
         exit;
     }
 
@@ -216,7 +216,7 @@ public function do_register() {
 
             if (empty($username)) {
                 $_SESSION['forgot_error'] = "Please enter your username.";
-                header("Location: /POSu/views/forgotpass.php");
+                header("Location: /views/forgotpass.php");
                 exit;
             }
 
@@ -224,18 +224,18 @@ public function do_register() {
 
             if (!$user) {
                 $_SESSION['forgot_error'] = "Username not found.";
-                header("Location: /POSu/views/forgotpass.php");
+                header("Location: /views/forgotpass.php");
                 exit;
             }
 
             if ($code !== '112345') {
                 $_SESSION['forgot_error'] = "Invalid verification code.";
-                header("Location: /POSu/views/forgotpass.php");
+                header("Location: /views/forgotpass.php");
                 exit;
             }
 
             $_SESSION['reset_username'] = $username;
-            header("Location: /POSu/views/change_password.php");
+            header("Location: /views/change_password.php");
             exit;
         }
     }
@@ -254,7 +254,7 @@ public function do_register() {
             } else {
                 $_SESSION['error'] = "Failed to activate user.";
             }
-            header("Location: /POSu/views/settings.php");
+            header("Location: /views/settings.php");
             exit;
         }
     }
@@ -288,7 +288,7 @@ public function check_username() {
             } else {
                 $_SESSION['error'] = "Failed to deactivate user.";
             }
-            header("Location: /POSu/views/settings.php");
+            header("Location: /views/settings.php");
             exit;
         }
     }
@@ -322,7 +322,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
     break;
 
         default:
-            header("Location: /POSu/views/settings.php");
+            header("Location: /views/settings.php");
             exit;
     }
 }

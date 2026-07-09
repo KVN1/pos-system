@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {  // Changed 'id' to 'user_id' here
 }
 
 // Include the Database class
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/database.php'; // Adjust the path if necessary
+require_once __DIR__ . '/../database.php'; // Adjust the path if necessary
 
 // Create a new instance of the Database class
 $database = new Database();
@@ -49,7 +49,7 @@ $user_role = $user['role'];
 </head>
 <body>
     <!-- Sidebar or Navigation -->
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/POSu/includes/sidebar.php'; ?>
+    <?php include __DIR__ . '/../sidebar.php'; ?>
 
     <div class="main-content">
         <header class="header">

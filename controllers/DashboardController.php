@@ -16,7 +16,7 @@ class DashboardController {
     public function index() {
         // Check authentication
         if (!isset($_SESSION['user_id']) || !isset($_SESSION['role'])) {
-            header("Location: /POSu/user/login");
+            header("Location: /user/login");
             exit;
         }
 
@@ -30,7 +30,7 @@ class DashboardController {
     // Get sales data for today
     public function getTodaySales() {
         if (!isset($_SESSION['user_id'])) {
-            header("Location: /POSu/user/login");
+            header("Location: /user/login");
             exit;
         }
 
@@ -41,7 +41,7 @@ class DashboardController {
     // Get total transactions for today
     public function getTodayTransactions() {
         if (!isset($_SESSION['user_id'])) {
-            header("Location: /POSu/user/login");
+            header("Location: /user/login");
             exit;
         }
 
@@ -52,7 +52,7 @@ class DashboardController {
     // Get best selling product
     public function getBestSeller() {
         if (!isset($_SESSION['user_id'])) {
-            header("Location: /POSu/user/login");
+            header("Location: /user/login");
             exit;
         }
 
@@ -63,7 +63,7 @@ class DashboardController {
     // Get near expiry products
     public function getNearExpiryProducts() {
         if (!isset($_SESSION['user_id'])) {
-            header("Location: /POSu/user/login");
+            header("Location: /user/login");
             exit;
         }
 
@@ -74,7 +74,7 @@ class DashboardController {
     // Get low stock products
     public function getLowStockProducts() {
         if (!isset($_SESSION['user_id'])) {
-            header("Location: /POSu/user/login");
+            header("Location: /user/login");
             exit;
         }
 

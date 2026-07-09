@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/database.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/controllers/ActivityLogController.php';
+require_once __DIR__ . '/../database.php';
+require_once __DIR__ . '/../ActivityLogController.php';
 
 try {
     $conn = Database::getConnection();

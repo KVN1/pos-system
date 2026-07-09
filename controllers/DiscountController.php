@@ -1,6 +1,6 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/DiscountModel.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/ActivityLogModel.php';
+require_once __DIR__ . '/../DiscountModel.php';
+require_once __DIR__ . '/../ActivityLogModel.php';
 
 class DiscountController {
     private $model;
@@ -31,7 +31,7 @@ public function update() {
             $_SESSION['error'] = "Failed to update discount";
         }
 
-        header("Location: /POSu/views/settings.php");
+        header("Location: /views/settings.php");
         exit;
     }
 }

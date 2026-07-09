@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/ActivityLogModel.php';
+require_once __DIR__ . '/../ActivityLogModel.php';
 
 class ActivityLogController {
     private $model;

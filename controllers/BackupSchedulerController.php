@@ -3,7 +3,7 @@ class BackupSchedulerController {
 
     public function checkAndRunBackup() {
         // Example logic – you can adjust this
-        $backupPath = "C:/xampp/htdocs/POSu/backups/";
+        $backupPath = "D:\xampp\htdocs\POSu\backups/";
 
         if (!file_exists($backupPath)) {
             mkdir($backupPath, 0777, true);

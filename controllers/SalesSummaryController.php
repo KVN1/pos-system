@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/SalesSummaryModel.php';
+require_once __DIR__ . '/../SalesSummaryModel.php';
 
 class SalesSummaryController {
     private $model;

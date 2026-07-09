@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/controllers/ActivityLogController.php';
+require_once __DIR__ . '/../ActivityLogController.php';
 
 $search = $_GET['search'] ?? '';
 $startDate = $_GET['start_date'] ?? '';
@@ -26,7 +26,7 @@ foreach ($logs as $log) {
 }
 ?>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/POSu/includes/sidebar.php'; ?>
+<?php include __DIR__ . '/../sidebar.php'; ?>
 <link rel="stylesheet" href="/POSu/styles/stylee.css">
 <link rel="stylesheet" href="/POSu/styles/activitycss.css">
 

@@ -15,26 +15,26 @@ $notifications = [
 ];
 
 // Models
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/UserModel.php';
+require_once __DIR__ . '/../UserModel.php';
 $userModel = new UserModel();
 $activeUsers = $userModel->getUsersByStatus('Active');
 $deactivatedUsers = $userModel->getUsersByStatus('Inactive');
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/ProductModel.php';
+require_once __DIR__ . '/../ProductModel.php';
 $productModel = new ProductModel();
 $archivedProducts = $productModel->getArchivedProducts();
 $archivedBatches = $productModel->getArchivedBatches(); // ✅ Correct usage
 $getAllproductsDescription = $productModel->getAllproductsDescription();
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/CategoryModel.php';
+require_once __DIR__ . '/../CategoryModel.php';
 $categoryModel = new CategoryModel();
 $deactivatedCategories = $categoryModel->getDeactivatedCategories();
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/DiscountModel.php';
+require_once __DIR__ . '/../DiscountModel.php';
 $discountModel = new DiscountModel();
 $discounts = $discountModel->getAllDiscounts();
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/SystemSettingsModel.php';
+require_once __DIR__ . '/../SystemSettingsModel.php';
 $settingsModel = new SystemSettingsModel();
 $verificationCode = $settingsModel->getVerificationCode();
 ?>
@@ -50,7 +50,7 @@ $verificationCode = $settingsModel->getVerificationCode();
 </head>
 <body>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/POSu/includes/sidebar.php'; ?>
+<?php include __DIR__ . '/../sidebar.php'; ?>
 
 <main class="main-content">
     <div class="header">

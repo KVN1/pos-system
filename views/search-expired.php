@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/POSu/controllers/ProductController.php';
+require_once __DIR__ . '/../ProductController.php';
 $pc = new ProductController();
 
 $search = isset($_GET['q']) ? trim($_GET['q']) : '';

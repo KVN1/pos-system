@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/SystemSettingsModel.php';
+require_once __DIR__ . '/../SystemSettingsModel.php';
 
 $settingsModel = new SystemSettingsModel();
 
@@ -16,6 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_code'])) {
         $_SESSION['flash_type'] = "error";
     }
 
-    header("Location: /POSu/views/settings.php");
+    header("Location: /views/settings.php");
     exit;
 }

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/POSu/styles/stylee.css?v=<?= time(); ?>">
     <link rel="stylesheet" href="/POSu/styles/usermanualcss.css?v=<?= time(); ?>">
 
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/POSu/includes/sidebar.php'; ?>
+    <?php include __DIR__ . '/../sidebar.php'; ?>
 
     <style>
         

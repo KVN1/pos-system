@@ -4,8 +4,8 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 date_default_timezone_set('Asia/Manila');
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/ProductModel.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/ActivityLogModel.php';
+require_once __DIR__ . '/../ProductModel.php';
+require_once __DIR__ . '/../ActivityLogModel.php';
 
 $productController = new ProductController();
 
@@ -275,7 +275,7 @@ public function addProduct() {
 
     $_SESSION['flash_message'] = "Product/batch added successfully";
     $_SESSION['flash_type'] = "success";
-    header("Location: /POSu/products");
+    header("Location: /products");
     exit();
 }
 
@@ -354,7 +354,7 @@ if ($damagedQty > 0) {
 
     $_SESSION['flash_message'] = "Product updated successfully";
     $_SESSION['flash_type'] = "success";
-    header("Location: /POSu/products");
+    header("Location: /products");
     exit();
 }
 
@@ -366,7 +366,7 @@ if ($damagedQty > 0) {
             $_SESSION['flash_message'] = "Product archived successfully";
             $_SESSION['flash_type'] = "success";
         }
-        header("Location: /POSu/products");
+        header("Location: /products");
         exit();
     }
 
@@ -377,7 +377,7 @@ if ($damagedQty > 0) {
             $_SESSION['flash_message'] = "Product restored successfully";
             $_SESSION['flash_type'] = "success";
         }
-        header("Location: /POSu/views/settings.php#deactivatedModal");
+        header("Location: /views/settings.php#deactivatedModal");
         exit();
     }
 
@@ -388,7 +388,7 @@ if ($damagedQty > 0) {
             $_SESSION['flash_message'] = "Batch archived successfully";
             $_SESSION['flash_type'] = "success";
         }
-        header("Location: /POSu/products");
+        header("Location: /products");
         exit();
     }
 
@@ -436,7 +436,7 @@ public function returnDamagedItem() {
 
     $_SESSION['flash_message'] = "Damaged item returned successfully";
     $_SESSION['flash_type'] = "success";
-    header("Location: /POSu/products");
+    header("Location: /products");
     exit();
 }
 
@@ -477,7 +477,7 @@ if ($damagedQty > 0) {
         $_SESSION['flash_message'] = "Batch updated successfully";
         $_SESSION['flash_type'] = "success";
     }
-    header("Location: /POSu/products#batch_{$batchId}");
+    header("Location: /products#batch_{$batchId}");
     exit();
 }
 
@@ -488,7 +488,7 @@ if ($damagedQty > 0) {
         $_SESSION['flash_message'] = "Batch restored successfully";
         $_SESSION['flash_type'] = "success";
     }
-    header("Location: /POSu/views/settings.php");
+    header("Location: /views/settings.php");
     exit();
 }
 
@@ -603,7 +603,7 @@ if ($batch) {
 
     $_SESSION['flash_message'] = "Stock reordered successfully";
     $_SESSION['flash_type'] = "success";
-    header('Location: /POSu/products');
+    header('Location: /products');
     exit();
 }
 }
