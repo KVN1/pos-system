@@ -1,0 +1,12 @@
+# Sensitive files
+.env
+log.txt
+test.php
+hash_passwords.php
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

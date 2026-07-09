@@ -1,0 +1,326 @@
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    margin-left: 250px; /* Adjusts to sidebar width */
+}
+
+/* Categories Container */
+.categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+    justify-content: flex-start; /* Aligns categories properly */
+}
+
+/* Category Cards - Updated */
+.category-card {
+    background-color: #728156; /* Keeping the background color */
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    width: 200px;
+    transition: 0.3s ease-in-out;
+}
+
+.category-card h3 {
+    color: #ffffff; /* White text to contrast the background */
+    font-size: 18px;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+}
+
+/* Fix Sidebar Overlapping Issue */
+.dashboard {
+    display: flex;
+    height: 100vh;
+    align-items: flex-start;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background: #d9b99b; /* Soft brown */
+    color: #5a4638;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+/* Modals */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #f9f5f0; /* Light cream */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    color: #5a4638;
+    margin-bottom: 15px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #c89f78;
+    border-radius: 5px;
+    background: #e8d9c6;
+    color: #5a4638;
+}
+
+.modal-content input:focus {
+    outline: none;
+    background: #dcc3a9;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.save-btn {
+    background: #8da888;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+}
+
+.cancel-btn {
+    background: #b03030;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+}
+
+.save-btn:hover {
+    background: #7b947b;
+}
+
+.cancel-btn:hover {
+    background: #8c2525;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.search-bar input {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #c89f78;
+    background: #e8d9c6;
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    background-color: #8da888;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.search-bar button:hover {
+    background-color: #7b947b;
+}
+.categories-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.categories-table th, .categories-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.categories-table th {
+    background-color: #728156;
+    color: #fff;
+}
+
+.categories-table tbody tr:hover {
+    background-color: #f3f3f3;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    background-color: #f5f1ea;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.search-bar input[type="text"],
+.search-bar input[type="search"] {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #c2b49b;
+    background-color: #fdf8f1;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s border-color ease;
+}
+
+.search-bar input:focus {
+    border-color: #a68d6d;
+}
+
+.search-bar button {
+    padding: 10px 16px;
+    background-color: #88a087;
+    color: #fff;
+    font-weight: 500;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #748c74;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px; /* Ensures some spacing on small screens */
+    overflow-y: auto; /* Allows scrolling if content is taller than viewport */
+}
+
+/* Modal Content */
+.modal-content {
+    background: #f9f5f0; /* Light cream */
+    padding: 20px;
+    max-width: 700px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    text-align: left;
+    max-height: 90vh; /* Modal won't exceed 90% of viewport height */
+    overflow-y: auto; /* Scroll inside the modal */
+}
+
+/* Scrollbar Styling (optional) */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: rgba(114, 129, 86, 0.6);
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #f9f5f0;
+}
+
+
+.product-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.product-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.product-item p strong {
+    font-weight: bold;
+}
+
+.save-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.save-btn:hover {
+    background-color: #45a049;
+}
+
+.close-btn {
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.close-btn:hover {
+    background-color: #e41d1d;
+}
+

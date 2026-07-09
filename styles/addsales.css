@@ -1,0 +1,519 @@
+/* Reset & Base */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+/* Container */
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Top Bar */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #88976C;
+    padding: 15px 25px;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 10px 10px;
+}
+
+/* Back Button */
+.back-btn {
+    background: #c0392b;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #a93226;
+}
+
+/* Search Container */
+.search-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Search Box & Dropdown */
+.search-box,
+#productDropdown {
+    width: 500px;
+    padding: 14px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fffefb;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    transition: border-color 0.3s ease;
+}
+
+.search-box:focus,
+#productDropdown:focus {
+    border-color: #a68d6d;
+    outline: none;
+}
+
+.results-dropdown {
+    width: 500px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    position: absolute;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 999;
+    border-radius: 5px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.result-item {
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.result-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* Table Container */
+.table-container {
+    flex: 1;
+    overflow-y: auto;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Table Design */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+tr:hover td {
+    background-color: #f9f9f9;
+}
+
+th {
+    background: #88976C;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Summary Section */
+/* Summary Section */
+.summary {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: #88976C;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Proceed Button */
+.proceed-btn {
+    background: #27ae60;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.proceed-btn:hover {
+    background: #219150;
+    transform: scale(1.03);
+}
+
+/* Cash Input */
+input[name='cashGiven'] {
+    font-size: 16px;
+    padding: 8px 15px;
+    width: 120px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #fffdf9;
+    transition: border 0.3s ease;
+}
+
+input[name='cashGiven']:focus {
+    border-color: #a68d6d;
+    outline: none;
+}
+
+/* Discount Section */
+/* Discount Section */
+.discount-section {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.discount-section select {
+    font-size: 16px;
+    padding: 6px 12px;
+    width: 150px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #fffdf9;
+}
+
+.discount-section span {
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+
+.remove-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.remove-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.remove-btn:active {
+    transform: scale(0.97);
+}
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 999;
+    padding-top: 60px;
+    font-size: 25px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Semi-transparent background */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    border-radius: 8px;
+}
+
+
+/* Close button styles */
+.modal-content .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #444;
+    background-color: #eee;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.modal-content .close-btn:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+
+/* Confirm Sale Button */
+#confirmSaleBtn {
+    background: #27ae60;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#confirmSaleBtn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Modal animation for smooth fading */
+.modal.fade-in {
+    display: flex;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Adding some general body padding to make it look cleaner */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Adding padding to the modal container */
+.container {
+    padding: 20px;
+}
+
+/* Make the input and dropdown bigger */
+.input,
+.input-large {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fffefb;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    transition: border-color 0.3s ease;
+}
+
+/* Specifically target the dropdown */
+#paymentMethod {
+    width: 100%;        /* Ensure full width */
+    padding: 16px;      /* Increase padding */
+    font-size: 16px;    /* Increase font size */
+    border-radius: 8px; /* Match the rounded style */
+    border: 1px solid #ccc;
+    background: #fffefb;  /* Maintain background */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);  /* Shadow for the dropdown */
+}
+
+/* Optional: Style the option text to make sure it fits well */
+#paymentMethod option {
+    font-size: 18px;  /* Increase font size of the options */
+    padding: 10px;    /* Space inside options */
+}
+
+
+@keyframes slideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* Cancel button (bottom) */
+.cancel-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 12px;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 10%;
+}
+
+.cancel-btn:hover {
+    background-color: #c82333;
+}
+.total {
+    font-size: 30px;
+    font-weight: bold;
+}
+.quantity-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qty-input {
+    width: 60px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 5px;
+    font-size: 14px;
+    padding: 4px;
+}
+
+.qty-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.qty-btn.minus {
+    background-color: #f44336;
+}
+
+.qty-btn:hover {
+    opacity: 0.8;
+}
+
+/* Container for search input */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 480px; /* limits how long the input can be */
+    position: relative;
+}
+
+/* Search / Barcode Input */
+#barcodeInput {
+    width: 100%;
+    padding: 12px 16px;      /* taller and comfortable */
+    font-size: 16px;         /* easy to read */
+    border: 2px solid #ccc;  /* subtle border */
+    border-radius: 10px;     /* rounded corners */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* subtle shadow */
+    transition: 0.3s border-color, 0.3s box-shadow;
+}
+
+/* Focus effect */
+#barcodeInput:focus {
+    border-color: #007bff;          /* highlight border */
+    box-shadow: 0 2px 10px rgba(0,123,255,0.2); /* glow effect */
+    outline: none;
+}
+
+/* Autocomplete dropdown */
+.ui-autocomplete {
+    max-height: 220px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 15px;
+    z-index: 9999 !important;
+}
+
+/* Highlighted suggestion */
+.ui-state-focus {
+    background-color: #007bff !important;
+    color: white;
+}
+
+.flash-message {
+    position: fixed;       /* Float above content */
+    top: 20px;
+    right: 20px;
+    max-width: 350px;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+/* Show the message */
+.flash-message.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Success */
+.flash-message.success {
+    background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
+}
+
+/* Error */
+.flash-message.error {
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+}
+
+/* Optional: small close button */
+.flash-message .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: rgba(255,255,255,0.9);
+}

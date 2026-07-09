@@ -1,0 +1,107 @@
+Script reached
+Script reached
+Script reached
+Script reached
+Script reached
+Script reached
+Script reached
+Script reached
+Script reached
+Script reached
+Script reached
+Script reached
+Received data: {"sales":[{"code":"4806524039887","description":"Luxe Organix Aloe Vera 100ml","price":195,"quantity":1,"total":195}],"totalCost":195}
+Decoded Data: Array
+(
+    [sales] => Array
+        (
+            [0] => Array
+                (
+                    [code] => 4806524039887
+                    [description] => Luxe Organix Aloe Vera 100ml
+                    [price] => 195
+                    [quantity] => 1
+                    [total] => 195
+                )
+
+        )
+
+    [totalCost] => 195
+)
+
+Received data: {"sales":[{"code":"4806524039887","description":"Luxe Organix Aloe Vera 100ml","price":195,"quantity":1,"total":195}],"totalCost":195}
+Decoded Data: Array
+(
+    [sales] => Array
+        (
+            [0] => Array
+                (
+                    [code] => 4806524039887
+                    [description] => Luxe Organix Aloe Vera 100ml
+                    [price] => 195
+                    [quantity] => 1
+                    [total] => 195
+                )
+
+        )
+
+    [totalCost] => 195
+)
+
+Received data: {"sales":[{"code":"4806524039887","description":"Luxe Organix Aloe Vera 100ml","price":195,"quantity":1,"total":195}],"totalCost":195}
+Decoded Data: Array
+(
+    [sales] => Array
+        (
+            [0] => Array
+                (
+                    [code] => 4806524039887
+                    [description] => Luxe Organix Aloe Vera 100ml
+                    [price] => 195
+                    [quantity] => 1
+                    [total] => 195
+                )
+
+        )
+
+    [totalCost] => 195
+)
+
+Received data: {"sales":[{"code":"4806524039887","description":"Luxe Organix Aloe Vera 100ml","price":195,"quantity":1,"total":195}],"totalCost":195}
+Decoded Data: Array
+(
+    [sales] => Array
+        (
+            [0] => Array
+                (
+                    [code] => 4806524039887
+                    [description] => Luxe Organix Aloe Vera 100ml
+                    [price] => 195
+                    [quantity] => 1
+                    [total] => 195
+                )
+
+        )
+
+    [totalCost] => 195
+)
+
+Received data: {"sales":[{"code":"4806524039887","description":"Luxe Organix Aloe Vera 100ml","price":195,"quantity":1,"total":195}],"totalCost":195}
+Decoded Data: Array
+(
+    [sales] => Array
+        (
+            [0] => Array
+                (
+                    [code] => 4806524039887
+                    [description] => Luxe Organix Aloe Vera 100ml
+                    [price] => 195
+                    [quantity] => 1
+                    [total] => 195
+                )
+
+        )
+
+    [totalCost] => 195
+)
+

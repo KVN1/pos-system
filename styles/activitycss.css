@@ -1,0 +1,74 @@
+
+.collapse-btn {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    padding: 8px 12px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    transition: 0.3s;
+}
+.collapse-btn:hover {
+    background-color: #45a049;
+}
+.table-container {
+    overflow-x: auto;
+    display: none;
+    margin-top: 5px;
+}
+
+/* Action badges */
+.log-in { background-color: #d4edda; color: #155724; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+.log-out { background-color: #f8d7da; color: #721c24; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+.log-adjust { background-color: #fff3cd; color: #856404; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+.log-other { background-color: #e2e3e5; color: #41464b; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+
+/* Table row hover */
+.table tbody tr:hover { background-color: #f1f1f1; }
+
+/* Pagination buttons */
+.pagination-button {
+    padding: 4px 10px;
+    margin: 2px;
+    border: 1px solid #ccc;
+    background: #f1f1f1;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.pagination-button.active { background: #4CAF50; color: white; }
+.pagination-button:hover { background: #45a049; color: white; }
+
+/* Activity Log Tables only */
+.activity-log-section .table { width: 100%; border-collapse: collapse; margin-bottom: 5px; }
+.activity-log-section .table th,
+.activity-log-section .table td { padding: 8px 10px; border: 1px solid #ddd; text-align: left; }
+.activity-log-section .table th { background-color: #4CAF50; color: #fff; } /* matches POS system */
+.activity-log-section .table tbody tr:hover { background-color: #f0f0f0; transition: 0.2s; }
+
+/* Status-based row coloring */
+.activity-log-section .row-product { background-color: #e6f5e6; }    /* light green */
+.activity-log-section .row-sales { background-color: #fff7e6; }      /* light yellow/orange */
+.activity-log-section .row-category { background-color: #e6f0ff; }   /* light blue */
+.activity-log-section .row-user { background-color: #f9e6e6; }       /* light red/pink */
+.activity-log-section .row-other { background-color: #f2f2f2; }      /* gray */
+
+/* Pagination buttons */
+.activity-log-section .table-pagination button {
+    padding: 5px 12px;
+    margin: 0 5px;
+    background-color: #4CAF50; /* POS green */
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.activity-log-section .table-pagination button:hover { background-color: #3e8e41; }
+.activity-log-section .table-pagination .page-info {
+    font-weight: bold;
+    margin: 0 8px;
+}

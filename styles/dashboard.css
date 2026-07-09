@@ -1,0 +1,340 @@
+/* Dashboard Specific Styles */
+
+/* Body and Main Layout */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f3f6f4;
+}
+
+.main-content {
+    margin: 0 auto;
+    padding: 50px 60px;
+    text-align: center;
+    max-width: 100%;
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 2.7rem;
+    color: #3e563e;
+    margin-bottom: 8px;
+}
+
+.header p {
+    font-size: 1.2rem;
+    color: #5b705b;
+}
+
+.header .user-info {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.header .user-info img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image Buttons (Navigation Cards) */
+.image-btn {
+    width: 140px;
+    height: 140px;
+    background-color: #e6f2e2;
+    border-radius: 20px;
+    box-shadow: 0 4px 14px rgba(60, 85, 60, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #2f402f;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.image-btn:hover {
+    background-color: #d1e8cf;
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(60, 85, 60, 0.25);
+}
+
+.image-btn img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.image-btn span {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Form Buttons */
+form.image-btn {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+form.image-btn button {
+    all: unset;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Notification Exclamation */
+.notif-exclamation {
+    color: white;
+    background-color: red;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.notif-exclamation:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Summary Cards */
+.summary-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.summary-cards .card {
+    background-color: #e6f2e2;
+    border-radius: 20px;
+    box-shadow: 0 4px 14px rgba(60, 85, 60, 0.15);
+    width: 300px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.summary-cards .card h3 {
+    font-size: 1.6rem;
+    color: #3e563e;
+    margin-bottom: 15px;
+}
+
+.summary-cards .card p {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #2f402f;
+}
+
+.summary-cards .card:hover {
+    background-color: #d1e8cf;
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(60, 85, 60, 0.25);
+}
+
+/* Table Styling */
+.notification-section {
+    background-color: #e6f2e2;
+    border-radius: 20px;
+    box-shadow: 0 4px 14px rgba(60, 85, 60, 0.15);
+    padding: 30px;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease;
+}
+
+.notification-section:hover {
+    background-color: #d1e8cf;
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(60, 85, 60, 0.25);
+}
+
+.notification-section h2 {
+    color: #3e563e;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(60, 85, 60, 0.1);
+}
+
+th {
+    background-color: #e6f2e2;
+    color: #3e563e;
+    font-weight: 600;
+    padding: 15px;
+    text-align: left;
+    font-size: 1rem;
+    border-bottom: 2px solid #d1e8cf;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #2f402f;
+    font-size: 0.95rem;
+}
+
+tr.alert-row:hover {
+    background-color: #f8fdf8;
+    transition: background-color 0.3s ease;
+}
+
+tr.alert-row:last-child td {
+    border-bottom: none;
+}
+
+/* Notification Tables Container */
+.notifmain-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.notification-section {
+    flex: 1;
+    max-width: 600px;
+    min-width: 400px;
+    margin: 0;
+}
+
+.notification-section:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: -1px;
+}
+
+.notification-section:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -1px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .notifmain-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .notification-section {
+        max-width: 100%;
+        min-width: auto;
+        margin: 10px 0;
+    }
+
+    .notification-section:first-child,
+    .notification-section:last-child {
+        border-radius: 20px;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .notification-section {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    th, td {
+        padding: 12px 8px;
+        font-size: 0.9rem;
+    }
+
+    .notification-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .image-btn {
+        width: 120px;
+        height: 120px;
+    }
+
+    .image-btn img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .image-btn span {
+        font-size: 0.9rem;
+    }
+
+    .summary-cards .card {
+        width: 90%;
+        height: auto;
+    }
+
+    .summary-cards .card p {
+        font-size: 1.8rem;
+    }
+}

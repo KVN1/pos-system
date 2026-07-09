@@ -1,0 +1,162 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E7F5DC; /* Light Green Background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    background-color: #f8f1e4; /* Light background for main content */
+    min-height: 100vh;
+}
+
+h1, h2 {
+    color: #4b6043; /* Dark Green */
+}
+
+/* Notification Section */
+.notification-section {
+    margin-bottom: 30px;
+}
+
+.notification-section h2 {
+    font-size: 1.8em;
+    color: #4b6043;
+    margin-bottom: 10px;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #4b6043;
+}
+
+table th {
+    background-color: #6b8f4e; /* Olive Green */
+    color: #fff;
+}
+
+table td {
+    background-color: #d5e8d4; /* Light Green */
+}
+
+table tr:hover {
+    background-color: #b0c7a6; /* Hover color */
+}
+
+/* Alert Row Styling */
+.alert-row {
+    background-color: #fffbcc; /* Light Yellow for alerts */
+    font-weight: bold;
+}
+
+/*.alert-row td {
+    color: #cc3300; /* Red color for alerts */
+}*/
+
+.notification {
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.notification-icon {
+    color: red;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+/* Badge Notification Style */
+.notification-badge {
+    background-color: #ff6666; /* Red badge for notifications */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #88976C; /* Olive Green Sidebar */
+    color: #fff;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar-brand img {
+    max-width: 180px;
+}
+
+.nav {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.nav li {
+    width: 100%;
+    text-align: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    background: #4b6043; /* Dark Green */
+    padding: 12px;
+    display: block;
+    transition: 0.3s;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    background: #6b8f4e; /* Olive Green Hover */
+    color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 220px;
+    }
+
+    .sidebar-brand img {
+        max-width: 150px;
+    }
+
+    .main-content {
+        margin-left: 220px;
+    }
+
+    table th, table td {
+        padding: 10px;
+    }
+}
