@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . '/../SalesReportController.php';
+require_once __DIR__ . '/../controllers/SalesReportController.php';
 
 $reportController = new SalesReportController();
 

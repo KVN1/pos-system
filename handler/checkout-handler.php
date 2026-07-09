@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once __DIR__ . '/../SalesController.php';
+require_once __DIR__ . '/../controllers/SalesController.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] === 'checkout') {
     $saleData = $_POST['saleData'];

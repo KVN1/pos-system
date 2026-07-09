@@ -49,7 +49,7 @@ $user_role = $user['role'];
 </head>
 <body>
     <!-- Sidebar or Navigation -->
-    <?php include __DIR__ . '/../sidebar.php'; ?>
+    <?php include __DIR__ . '/../includes/sidebar.php'; ?>
 
     <div class="main-content">
         <header class="header">

@@ -4,8 +4,8 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 date_default_timezone_set('Asia/Manila');
 
-require_once __DIR__ . '/../ProductModel.php';
-require_once __DIR__ . '/../ActivityLogModel.php';
+require_once __DIR__ . '/../models/ProductModel.php';
+require_once __DIR__ . '/../models/ActivityLogModel.php';
 
 $productController = new ProductController();
 

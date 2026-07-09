@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/../database.php';
-require_once __DIR__ . '/../ActivityLogController.php';
+require_once __DIR__ . '/../controllers/ActivityLogController.php';
 
 try {
     $conn = Database::getConnection();

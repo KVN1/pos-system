@@ -18,7 +18,7 @@ $dashboardData = array_merge([
     'notifications' => []
 ], $dashboardData);
 
-require_once __DIR__ . '/../BackupSchedulerController.php';
+require_once __DIR__ . '/../controllers/BackupSchedulerController.php';
 $scheduler = new BackupSchedulerController();
 $scheduler->checkAndRunBackup();
 ?>

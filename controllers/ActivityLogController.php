@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../ActivityLogModel.php';
+require_once __DIR__ . '/../models/ActivityLogModel.php';
 
 class ActivityLogController {
     private $model;

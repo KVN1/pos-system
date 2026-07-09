@@ -3,8 +3,8 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-require_once __DIR__ . '/../SalesModel.php';
-require_once __DIR__ . '/../ActivityLogController.php';
+require_once __DIR__ . '/../models/SalesModel.php';
+require_once __DIR__ . '/../controllers/ActivityLogController.php';
 
 class SalesController {
     private $salesModel;

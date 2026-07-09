@@ -1,7 +1,7 @@
 <?php
 // Include necessary files and classes
-require_once __DIR__ . '/../ProductModel.php';
-require_once __DIR__ . '/../SalesModel.php'; // Handle sale items in SalesModel
+require_once __DIR__ . '/../models/ProductModel.php';
+require_once __DIR__ . '/../models/SalesModel.php'; // Handle sale items in SalesModel
 
 // Start the session to retrieve cart data
 session_start();

@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../DiscountModel.php';
-require_once __DIR__ . '/../ActivityLogModel.php';
+require_once __DIR__ . '/../models/DiscountModel.php';
+require_once __DIR__ . '/../models/ActivityLogModel.php';
 
 class DiscountController {
     private $model;

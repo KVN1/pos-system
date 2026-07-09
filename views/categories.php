@@ -3,8 +3,8 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-require_once __DIR__ . '/../CategoryController.php';
-require_once __DIR__ . '/../ProductController.php';
+require_once __DIR__ . '/../controllers/CategoryController.php';
+require_once __DIR__ . '/../controllers/ProductController.php';
 
 $categoryController = new CategoryController();
 $categories = $categoryController->index();
@@ -20,7 +20,7 @@ $categories = $categoryController->index();
 </head>
 <body>
 <div class="dashboard">
-    <?php include __DIR__ . '/../sidebar.php'; ?>
+    <?php include __DIR__ . '/../includes/sidebar.php'; ?>
     <main class="main-content">
         <header class="header">
             <h1>Grocery Categories</h1>

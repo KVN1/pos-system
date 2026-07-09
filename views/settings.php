@@ -15,26 +15,26 @@ $notifications = [
 ];
 
 // Models
-require_once __DIR__ . '/../UserModel.php';
+require_once __DIR__ . '/../models/UserModel.php';
 $userModel = new UserModel();
 $activeUsers = $userModel->getUsersByStatus('Active');
 $deactivatedUsers = $userModel->getUsersByStatus('Inactive');
 
-require_once __DIR__ . '/../ProductModel.php';
+require_once __DIR__ . '/../models/ProductModel.php';
 $productModel = new ProductModel();
 $archivedProducts = $productModel->getArchivedProducts();
 $archivedBatches = $productModel->getArchivedBatches(); // ✅ Correct usage
 $getAllproductsDescription = $productModel->getAllproductsDescription();
 
-require_once __DIR__ . '/../CategoryModel.php';
+require_once __DIR__ . '/../models/CategoryModel.php';
 $categoryModel = new CategoryModel();
 $deactivatedCategories = $categoryModel->getDeactivatedCategories();
 
-require_once __DIR__ . '/../DiscountModel.php';
+require_once __DIR__ . '/../models/DiscountModel.php';
 $discountModel = new DiscountModel();
 $discounts = $discountModel->getAllDiscounts();
 
-require_once __DIR__ . '/../SystemSettingsModel.php';
+require_once __DIR__ . '/../models/SystemSettingsModel.php';
 $settingsModel = new SystemSettingsModel();
 $verificationCode = $settingsModel->getVerificationCode();
 ?>
@@ -50,7 +50,7 @@ $verificationCode = $settingsModel->getVerificationCode();
 </head>
 <body>
 
-<?php include __DIR__ . '/../sidebar.php'; ?>
+<?php include __DIR__ . '/../includes/sidebar.php'; ?>
 
 <main class="main-content">
     <div class="header">
