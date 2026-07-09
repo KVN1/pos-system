@@ -45,8 +45,8 @@ $verificationCode = $settingsModel->getVerificationCode();
 <head>
     <meta charset="UTF-8">
     <title>Settings</title>
-    <link rel="stylesheet" href="/POSu/styles/stylee.css">
-    <link rel="stylesheet" href="/POSu/styles/settingscss.css">
+    <link rel="stylesheet" href="/styles/stylee.css">
+    <link rel="stylesheet" href="/styles/settingscss.css">
 </head>
 <body>
 
@@ -56,7 +56,7 @@ $verificationCode = $settingsModel->getVerificationCode();
     <div class="header">
         <h1>Settings</h1>
 <div class="user-info">
-    <img src="/POSu/images/user.png" alt="User Icon">
+    <img src="/images/user.png" alt="User Icon">
     <div>
         <p>Welcome, <strong><?= htmlspecialchars($user_name); ?></strong></p>
         <!-- Email removed since it's not needed -->
@@ -79,13 +79,13 @@ $verificationCode = $settingsModel->getVerificationCode();
 
     <div class="button-container">
         <?php if ($role === 'admin'): ?>
-            <button class="settings-btn" onclick="window.location.href='/POSu/views/Activity.php'">Activity Log</button>
+            <button class="settings-btn" onclick="window.location.href='/views/Activity.php'">Activity Log</button>
             <button class="settings-btn" onclick="openModal('usersModal')">Users</button>
             <button class="settings-btn" onclick="openModal('deactivatedModal')">Archives</button>
-            <button class="settings-btn" onclick="window.location.href='/POSu/backup/backup.php'">Backup Database</button>
+            <button class="settings-btn" onclick="window.location.href='/backup/backup.php'">Backup Database</button>
             <button class="settings-btn" onclick="openModal('discountsModal')">Discounts/Codes</button>
         <?php endif; ?>
-        <a class="settings-btn" href="/POSu/views/usermanual.php">User Manual</a>
+        <a class="settings-btn" href="/views/usermanual.php">User Manual</a>
     </div>
 
 <!-- Discounts Modal -->
@@ -96,7 +96,7 @@ $verificationCode = $settingsModel->getVerificationCode();
         <h2>Edit Discounts & System Code</h2>
 
         <!-- Discounts Form -->
-        <form method="POST" action="/POSu/index.php?url=discounts">
+        <form method="POST" action="/index.php?url=discounts">
             <table class="modal-table">
                 <thead>
                     <tr>
@@ -123,7 +123,7 @@ $verificationCode = $settingsModel->getVerificationCode();
         </form>
 
 <!-- System Code Section -->
-<form method="POST" action="/POSu/controllers/SystemSettingsController.php" 
+<form method="POST" action="/controllers/SystemSettingsController.php" 
       style="display: flex; align-items: center; gap: 10px; margin-top: 20px;">
 
     <label for="verification_code" style="font-weight:bold; white-space: nowrap;">
@@ -217,7 +217,7 @@ function toggleCodeVisibility() {
                     <td><?= htmlspecialchars($product['description']) ?></td>
                     <td><?= htmlspecialchars($product['category']) ?></td>
                     <td>
-                        <form method="POST" action="/POSu/controllers/ProductController.php">
+                        <form method="POST" action="/controllers/ProductController.php">
                             <input type="hidden" name="action" value="restore">
                             <input type="hidden" name="id" value="<?= $product['id']; ?>">
                             <button type="submit" class="restore-btn">Restore</button>
@@ -248,7 +248,7 @@ function toggleCodeVisibility() {
                     <td><?= htmlspecialchars($batch['description']); ?></td>
                     <td><?= htmlspecialchars($batch['batch_id']); ?></td>
                     <td>
-                        <form method="POST" action="/POSu/controllers/ProductController.php">
+                        <form method="POST" action="/controllers/ProductController.php">
                             <input type="hidden" name="action" value="restore_batch">
                             <input type="hidden" name="batch_id" value="<?= $batch['batch_id']; ?>">
                             <button type="submit" class="restore-btn">Restore</button>
@@ -278,7 +278,7 @@ function toggleCodeVisibility() {
                 <tr>
                     <td><?= htmlspecialchars($category['category_name']); ?></td>
                     <td>
-                        <form method="POST" action="/POSu/controllers/CategoryController.php">
+                        <form method="POST" action="/controllers/CategoryController.php">
                             <input type="hidden" name="action" value="restore">
                             <input type="hidden" name="id" value="<?= $category['id']; ?>">
                             <button type="submit" class="restore-btn">Restore</button>
@@ -330,7 +330,7 @@ function toggleCodeVisibility() {
                             <td><?= htmlspecialchars($user['role']) ?></td>
                             <td><?= htmlspecialchars($user['status']) ?></td>
                             <td>
-                                <form method="POST" action="/POSu/controllers/UserController.php">
+                                <form method="POST" action="/controllers/UserController.php">
                                     <input type="hidden" name="user_id" value="<?= $user['user_id']; ?>">
                                     <input type="hidden" name="action" value="deactivate_user">
                                     <button type="submit" class="delete-btn">Deactivate</button>
@@ -366,7 +366,7 @@ function toggleCodeVisibility() {
                             <td><?= htmlspecialchars($user['role']) ?></td>
                             <td><?= htmlspecialchars($user['status']) ?></td>
                             <td>
-                                <form method="POST" action="/POSu/controllers/UserController.php">
+                                <form method="POST" action="/controllers/UserController.php">
                                     <input type="hidden" name="user_id" value="<?= $user['user_id']; ?>">
                                     <input type="hidden" name="action" value="activate_user">
                                     <button type="submit" class="restore-btn">Activate</button>

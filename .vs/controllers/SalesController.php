@@ -23,7 +23,7 @@ class SalesController {
     public function show($id) {
         $sale = $this->salesModel->getSaleById($id);
         if (!$sale) {
-            header("Location: /POSu/sales?error=Sale not found");
+            header("Location: /sales?error=Sale not found");
             exit;
         }
         include __DIR__ . '/../views/sale-detail.php';
@@ -71,15 +71,15 @@ public function store() {
     // Delete a sale
     public function destroy($id) {
         if (!is_numeric($id)) {
-            header("Location: /POSu/sales?error=Invalid sale ID");
+            header("Location: /sales?error=Invalid sale ID");
             exit;
         }
 
         if ($this->salesModel->deleteSale($id)) {
-            header("Location: /POSu/sales?success=Sale deleted");
+            header("Location: /sales?success=Sale deleted");
             exit;
         } else {
-            header("Location: /POSu/sales?error=Failed to delete sale");
+            header("Location: /sales?error=Failed to delete sale");
             exit;
         }
     }

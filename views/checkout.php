@@ -8,7 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
-    <link rel="stylesheet" href="/POSu/css/stylee.css">
+    <link rel="stylesheet" href="/css/stylee.css">
 </head>
 <body>
 
@@ -93,7 +93,7 @@ function calculateChange() {
 
 function finalizeTransaction() {
     alert("Transaction successful! Printing receipt...");
-    window.location.href = "/POSu/views/dashboard.php";
+    window.location.href = "/views/dashboard.php";
 }
 
 loadCartItems();

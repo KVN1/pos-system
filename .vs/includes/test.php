@@ -7,17 +7,17 @@ if (session_status() === PHP_SESSION_NONE) {
 <aside class="sidebar">
     <div class="sidebar-header">
         <a href="/HauldUpBro/home" class="sidebar-brand">
-            <img src="/POSu/images/logo.png" alt="Logo">
+            <img src="/images/logo.png" alt="Logo">
         </a>
     </div>
 
     <ul class="nav">
         <!-- Dashboard is accessible to all roles -->
-        <li><a class="nav-link" href="/POSu/views/dashboard.php">Dashboard</a></li>
+        <li><a class="nav-link" href="/views/dashboard.php">Dashboard</a></li>
 
         <!-- Add-Sales is only for managers -->
         <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin','cashier'): ?>
-            <li><a class="nav-link" href="/POSu/views/add-sales.php">Add-Sales</a></li>
+            <li><a class="nav-link" href="/views/add-sales.php">Add-Sales</a></li>
         <?php endif; ?>
 
         <!-- Sales is accessible to both admin and manager -->
@@ -25,21 +25,21 @@ if (session_status() === PHP_SESSION_NONE) {
 
         <!-- Products and Categories are only for managers -->
         <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'cashier', 'admin'): ?>
-            <li><a class="nav-link" href="/POSu/views/products.php">Products</a></li>
-            <li><a class="nav-link" href="/POSu/views/categories.php">Categories</a></li>
+            <li><a class="nav-link" href="/views/products.php">Products</a></li>
+            <li><a class="nav-link" href="/views/categories.php">Categories</a></li>
         <?php endif; ?>
 
         <!-- Admin panel is only visible to admin -->
         <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
-            <li><a class="nav-link" href="/POSu/views/admin.php">Admin</a></li>
+            <li><a class="nav-link" href="/views/admin.php">Admin</a></li>
         <?php endif; ?>
 
         <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
-            <li><a class="nav-link" href="/POSu/views/sales.php">Sales</a></li>
+            <li><a class="nav-link" href="/views/sales.php">Sales</a></li>
         <?php endif; ?>
 
         <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'cashier'): ?>
-            <li><a class="nav-link" href="/POSu/views/admin.php">Manager</a></li>
+            <li><a class="nav-link" href="/views/admin.php">Manager</a></li>
         <?php endif; ?>
 
         <!-- Settings Dropdown - Available for all roles -->

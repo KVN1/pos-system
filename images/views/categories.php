@@ -3,7 +3,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start(); // Ensure session is started
 }
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/controllers/CategoryController.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/controllers/CategoryController.php';
 
 $categoryController = new CategoryController();
 $categories = $categoryController->index();
@@ -14,13 +14,13 @@ $categories = $categoryController->index();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categories - POS</title>
-    <link rel="stylesheet" href="/POSu/styles/stylee.css">
-    <link rel="stylesheet" href="/POSu/styles/categories-style.css">
+    <link rel="stylesheet" href="/styles/stylee.css">
+    <link rel="stylesheet" href="/styles/categories-style.css">
 
 </head>
 <body>
     <div class="dashboard">
-        <?php include $_SERVER['DOCUMENT_ROOT'] . '/POSu/includes/sidebar.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/sidebar.php'; ?>
         <main class="main-content">
             <header class="header">
     <div>
@@ -73,7 +73,7 @@ $categories = $categoryController->index();
     <div class="modal-overlay" id="editModal">
         <div class="modal-content">
             <h2>Edit Category</h2>
-                <form method="POST" action="/POSu/controllers/CategoryController.php">
+                <form method="POST" action="/controllers/CategoryController.php">
                 <input type="hidden" name="action" value="edit">
                 <input type="hidden" id="editId" name="id">
                 <input type="text" id="editName" name="category_name" required>
@@ -106,7 +106,7 @@ $categories = $categoryController->index();
 
             let formData = new FormData(this);
 
-            fetch("/POSu/controllers/CategoryController.php", {
+            fetch("/controllers/CategoryController.php", {
                 method: "POST",
                 body: formData
             })

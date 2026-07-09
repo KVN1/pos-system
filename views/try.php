@@ -21,8 +21,8 @@ $lowStockProducts = array_filter($products, function ($product) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - POS</title>
-    <link rel="stylesheet" href="/POSu/styles/stylee.css?v=<?= time(); ?>">
-    <link rel="stylesheet" href="/POSu/styles/prodstyles.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="/styles/stylee.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="/styles/prodstyles.css?v=<?= time(); ?>">
     <style>
         .legend-container { margin: 20px 0; display: flex; gap: 40px; flex-wrap: wrap; }
         .legend-section { background: #f9f9f9; border: 1px solid #ccc; border-radius: 10px; padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }

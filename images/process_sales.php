@@ -1,8 +1,8 @@
 <?php
 // Include necessary files and classes
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/ProductModel.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/SalesModel.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/SaleItemsModel.php'; // If you have a SaleItems model
+require_once $_SERVER['DOCUMENT_ROOT'] . '/models/ProductModel.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/models/SalesModel.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/models/SaleItemsModel.php'; // If you have a SaleItems model
 
 // Start the session to retrieve cart data
 session_start();

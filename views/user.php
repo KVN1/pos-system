@@ -43,8 +43,8 @@ $user_role = $user['role'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
-    <link rel="stylesheet" href="/POSu/styles/stylee.css"> 
-    <link rel="stylesheet" href="/POSu/styles/userstyle.css"> <!-- Correct CSS link -->
+    <link rel="stylesheet" href="/styles/stylee.css"> 
+    <link rel="stylesheet" href="/styles/userstyle.css"> <!-- Correct CSS link -->
 
 </head>
 <body>

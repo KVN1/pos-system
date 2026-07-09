@@ -204,7 +204,7 @@ if (isset($_POST['addProduct']) && $productCode) {
 <head>
 <meta charset="UTF-8">
 <title>Add Sales</title>
-<link rel="stylesheet" href="/POSu/styles/addsales.css?v=<?= time(); ?>">
+<link rel="stylesheet" href="/styles/addsales.css?v=<?= time(); ?>">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
@@ -229,7 +229,7 @@ if (isset($_POST['addProduct']) && $productCode) {
         <p><strong>To Pay:</strong> ₱<?= number_format($totalAfterDiscount,2); ?></p>
         <p><strong>Cash:</strong> ₱<?= number_format($_SESSION['cashGiven'],2); ?></p>
         <p><strong>Change:</strong> ₱<?= number_format($_SESSION['changeAmount'],2); ?></p>
-        <form method="POST" action="/POSu/controllers/SalesController.php">
+        <form method="POST" action="/controllers/SalesController.php">
             <input type="hidden" name="proceedSale" value="1">
             <button type="submit" class="proceed-btn">CONFIRM</button>
             <button type="button" id="cancelSaleBtn" class="cancel-btn">Cancel</button>
@@ -238,7 +238,7 @@ if (isset($_POST['addProduct']) && $productCode) {
 </div>
 
 <div class="top-bar">
-    <a class="back-btn" href="/POSu/dashboard">Back</a>
+    <a class="back-btn" href="/dashboard">Back</a>
     <span>Add Sales</span>
 </div>
 

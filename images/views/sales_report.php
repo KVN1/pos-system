@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sales Report</title>
-        <link rel="stylesheet" href="POSu/styles/stylee.css">
+        <link rel="stylesheet" href="styles/stylee.css">
 
-    <link rel="stylesheet" href="POSu/styles/sales-style.css">
+    <link rel="stylesheet" href="styles/sales-style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-        <?php include $_SERVER['DOCUMENT_ROOT'] . "/POSu/includes/sidebar.php"; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/sidebar.php"; ?>
 
     <div class="main-content">
         <h1>Sales Report</h1>

@@ -7,29 +7,29 @@ if (session_status() === PHP_SESSION_NONE) {
 <!-- Sidebar -->
 <aside class="sidebar">
     <div class="sidebar-header">
-        <a href="/POSu/views/dashboard.php" class="sidebar-brand">
-            <img src="/POSu/images/logo.png" alt="Logo">
+        <a href="/views/dashboard.php" class="sidebar-brand">
+            <img src="/images/logo.png" alt="Logo">
         </a>
     </div>
 
     <ul class="nav">
-        <li><a class="nav-link" href="/POSu/add-sales">ADD SALES</a></li>
-        <li><a class="nav-link" href="/POSu/dashboard">Dashboard</a></li>
+        <li><a class="nav-link" href="/add-sales">ADD SALES</a></li>
+        <li><a class="nav-link" href="/dashboard">Dashboard</a></li>
         
         <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
-        <li><a class="nav-link" href="http://localhost/POSu/sales">Sales</a></li>
+        <li><a class="nav-link" href="http://localhost/sales">Sales</a></li>
         <?php endif; ?>
 
 
-        <li><a class="nav-link" href="/POSu/Products">Products</a></li>
-        <li><a class="nav-link" href="/POSu/Categories">Categories</a></li>
+        <li><a class="nav-link" href="/Products">Products</a></li>
+        <li><a class="nav-link" href="/Categories">Categories</a></li>
 
         <li class="dropdown">
             <a class="nav-link dropdown-toggle" href="#" onclick="toggleDropdown()">Settings</a>
             <ul class="dropdown-menu" id="dropdownMenu">
                 <li><a class="dropdown-item" href="#">General</a></li>
                 <li>
-                    <form id="logoutForm" action="/POSu/user/logout" method="POST">
+                    <form id="logoutForm" action="/user/logout" method="POST">
                         <button type="submit" class="dropdown-item">Logout</button>
                     </form>
                 </li>

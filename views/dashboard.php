@@ -28,8 +28,8 @@ $scheduler->checkAndRunBackup();
 <head>
     <meta charset="UTF-8">
     <title>Dashboard - POS</title>
-    <link rel="stylesheet" href="/POSu/styles/stylee.css">
-    <link rel="stylesheet" href="/POSu/styles/dashboard.css">
+    <link rel="stylesheet" href="/styles/stylee.css">
+    <link rel="stylesheet" href="/styles/dashboard.css">
 </head>
 <body>
 
@@ -37,7 +37,7 @@ $scheduler->checkAndRunBackup();
         <div class="header">
             <h1>Dashboard</h1>
             <div class="user-info">
-                <img src="/POSu/images/user.png" alt="User Icon">
+                <img src="/images/user.png" alt="User Icon">
                 <p>Welcome, <strong>
                     <?= isset($_SESSION["username"]) ? htmlspecialchars($_SESSION["username"]) : "Guest"; ?>
                 </strong>!</p>
@@ -45,44 +45,44 @@ $scheduler->checkAndRunBackup();
         </div>
 
 <div class="button-container">
-    <a href="/POSu/ADD-SALES-PAGE" class="image-btn">
-        <img src="/POSu/images/add.png" alt="Add Sales">
+    <a href="/ADD-SALES-PAGE" class="image-btn">
+        <img src="/images/add.png" alt="Add Sales">
         <span>Add Sales</span>
     </a>
 
-    <a href="/POSu/products" class="image-btn">
-        <img src="/POSu/images/prod.png" alt="Products">
+    <a href="/products" class="image-btn">
+        <img src="/images/prod.png" alt="Products">
         <span>Product Inventory</span>
     </a>
 
-    <a href="/POSu/Categories" class="image-btn">
-        <img src="/POSu/images/categ.png" alt="Categories">
+    <a href="/Categories" class="image-btn">
+        <img src="/images/categ.png" alt="Categories">
         <span>Categories</span>
     </a>
 
     <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
-        <a href="/POSu/sales" class="image-btn">
-            <img src="/POSu/images/sales.png" alt="Sales Report">
+        <a href="/sales" class="image-btn">
+            <img src="/images/sales.png" alt="Sales Report">
             <span>Sales</span>
         </a>
     <?php endif; ?>
 
-    <a href="/POSu/views/notifications.php" class="image-btn" style="position: relative;">
-        <img src="/POSu/images/notif.png" alt="Notifications">
+    <a href="/views/notifications.php" class="image-btn" style="position: relative;">
+        <img src="/images/notif.png" alt="Notifications">
         <span>Notifications</span>
         <?php if (!empty($dashboardData['notifications']) && count($dashboardData['notifications']) > 0): ?>
             <div class="notif-exclamation">!</div>
         <?php endif; ?>
     </a>
 
-    <a href="/POSu/views/settings.php" class="image-btn">
-        <img src="/POSu/images/settings.png" alt="Settings">
+    <a href="/views/settings.php" class="image-btn">
+        <img src="/images/settings.png" alt="Settings">
         <span>Settings</span>
     </a>
 
-    <form action="/POSu/user/logout" method="POST" class="image-btn">
+    <form action="/user/logout" method="POST" class="image-btn">
         <button type="submit">
-            <img src="/POSu/images/logout.png" alt="Logout">
+            <img src="/images/logout.png" alt="Logout">
             <span>Logout</span>
         </button>
     </form>

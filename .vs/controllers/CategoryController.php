@@ -3,7 +3,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start(); // Ensure session is started
 }
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/CategoryModel.php'; // Absolute path to CategoryModel
+require_once $_SERVER['DOCUMENT_ROOT'] . '/models/CategoryModel.php'; // Absolute path to CategoryModel
 
 class CategoryController {
     private $categoryModel;
@@ -13,7 +13,7 @@ class CategoryController {
     }
 
     public function categories() {
-        require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/views/categories.php'; // Absolute path to categories view
+        require_once $_SERVER['DOCUMENT_ROOT'] . '/views/categories.php'; // Absolute path to categories view
     }
 
     public function index() {
@@ -41,7 +41,7 @@ public function create() {
 
     public function update() {
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/CategoryModel.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/models/CategoryModel.php';
     $categoryModel = new CategoryModel();
 
     if ($_POST["action"] === "edit" && !empty($_POST["id"]) && !empty($_POST["category_name"])) {
@@ -49,7 +49,7 @@ public function create() {
         $categoryName = htmlspecialchars($_POST["category_name"]);
 
         if ($categoryModel->updateCategory($id, $categoryName)) {
-            header("Location: /POSu/Categories"); // Redirect back after successful update
+            header("Location: /Categories"); // Redirect back after successful update
             exit();
         } else {
             echo "Error updating category.";
@@ -63,7 +63,7 @@ public function create() {
     public function delete() {
         if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["id"])) {
             $this->categoryModel->deleteCategory($_POST["id"]);
-            header("Location: " . $_SERVER['DOCUMENT_ROOT'] . '/POSu/views/categories.php'); // Absolute redirect
+            header("Location: " . $_SERVER['DOCUMENT_ROOT'] . '/views/categories.php'); // Absolute redirect
             exit;
         }
     }

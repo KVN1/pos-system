@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Manual - Sales and Inventory System</title>
-    <link rel="stylesheet" href="/POSu/styles/stylee.css?v=<?= time(); ?>">
-    <link rel="stylesheet" href="/POSu/styles/usermanualcss.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="/styles/stylee.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="/styles/usermanualcss.css?v=<?= time(); ?>">
 
     <?php include __DIR__ . '/../includes/sidebar.php'; ?>
 

@@ -80,8 +80,8 @@ foreach ($mainProducts as $product) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Product Notifications</title>
-<link rel="stylesheet" href="/POSu/styles/stylee.css">
-<link rel="stylesheet" href="/POSu/styles/notif-style.css">
+<link rel="stylesheet" href="/styles/stylee.css">
+<link rel="stylesheet" href="/styles/notif-style.css">
 <style>
 body { font-family: Arial, sans-serif; }
 .status-green { color: green; font-weight: bold; }

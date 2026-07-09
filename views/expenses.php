@@ -15,8 +15,8 @@ if (session_status() === PHP_SESSION_NONE) {
     </div>
 
     <div class="header">
-        <link rel="stylesheet" href="/POSu/styles/stylee.css?v=<?= time(); ?>">
-        <link rel="stylesheet" href="/POSu/styles/expenses.css?v=<?= time(); ?>">
+        <link rel="stylesheet" href="/styles/stylee.css?v=<?= time(); ?>">
+        <link rel="stylesheet" href="/styles/expenses.css?v=<?= time(); ?>">
         <?php include '../includes/sidebar.php'; ?>
         <h2>Expenses Overview</h2>
     </div>

@@ -23,7 +23,7 @@ $sales = [
 
             <section class="content">
                 <div class="sales-container">
-                    <button class="add-sale-btn" onclick="window.location.href='/POSu/views/add-sales.php'">Add Sale</button>
+                    <button class="add-sale-btn" onclick="window.location.href='/views/add-sales.php'">Add Sale</button>
                     
                     <table class="sales-table">
                         <thead>

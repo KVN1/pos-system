@@ -9,11 +9,11 @@ if (session_status() == PHP_SESSION_NONE) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - POS</title>
-    <link rel="stylesheet" href="/POSu/styles/stylee.css">
+    <link rel="stylesheet" href="/styles/stylee.css">
 </head>
 <body>
     <div class="dashboard">
-        <?php include $_SERVER['DOCUMENT_ROOT'] . "/POSu/includes/sidebar.php"; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/includes/sidebar.php"; ?>
         <main class="main-content">
             <header class="header">
                 <h1>Dashboard</h1>

@@ -16,31 +16,31 @@ function checkNotifications() {
 <!-- Sidebar -->
 <aside class="sidebar">
     <div class="sidebar-header">
-        <a href="/POSu/dashboard" class="sidebar-brand">
-            <img src="/POSu/images/logo.png" alt="Logo">
+        <a href="/dashboard" class="sidebar-brand">
+            <img src="/images/logo.png" alt="Logo">
         </a>
     </div>
 
     <ul class="nav">
-        <li><a class="nav-link <?= (strpos($current_page, 'dashboard') !== false) ? 'active' : '' ?>" href="/POSu/dashboard">Dashboard</a></li>
-        <li><a class="nav-link <?= (strpos($current_page, 'ADD-SALES-PAGE') !== false) ? 'active' : '' ?>" href="/POSu/ADD-SALES-PAGE">Add Sales</a></li>
+        <li><a class="nav-link <?= (strpos($current_page, 'dashboard') !== false) ? 'active' : '' ?>" href="/dashboard">Dashboard</a></li>
+        <li><a class="nav-link <?= (strpos($current_page, 'ADD-SALES-PAGE') !== false) ? 'active' : '' ?>" href="/ADD-SALES-PAGE">Add Sales</a></li>
 
         <?php if ($role === 'admin'): ?>
-            <li><a class="nav-link <?= (strpos($current_page, 'sales') !== false) ? 'active' : '' ?>" href="/POSu/sales">Sales Report</a></li>
+            <li><a class="nav-link <?= (strpos($current_page, 'sales') !== false) ? 'active' : '' ?>" href="/sales">Sales Report</a></li>
         <?php endif; ?>
 
-        <li><a class="nav-link <?= (strpos($current_page, 'products') !== false) ? 'active' : '' ?>" href="/POSu/products">Products Inventory</a></li>
-        <li><a class="nav-link <?= (strpos($current_page, 'Categories') !== false) ? 'active' : '' ?>" href="/POSu/Categories">Categories</a></li>
+        <li><a class="nav-link <?= (strpos($current_page, 'products') !== false) ? 'active' : '' ?>" href="/products">Products Inventory</a></li>
+        <li><a class="nav-link <?= (strpos($current_page, 'Categories') !== false) ? 'active' : '' ?>" href="/Categories">Categories</a></li>
 
         <li>
-            <a class="nav-link <?= (strpos($current_page, 'notifications') !== false) ? 'active' : '' ?>" href="/POSu/views/notifications.php">
+            <a class="nav-link <?= (strpos($current_page, 'notifications') !== false) ? 'active' : '' ?>" href="/views/notifications.php">
                 Notifications
                 <?php if (checkNotifications()): ?>
                     <span class="notification-badge">!</span>
                 <?php endif; ?>
             </a>
         </li>
-        <li><a class="nav-link <?= (strpos($current_page, 'settings') !== false) ? 'active' : '' ?>" href="/POSu/views/settings.php">Settings</a></li>
+        <li><a class="nav-link <?= (strpos($current_page, 'settings') !== false) ? 'active' : '' ?>" href="/views/settings.php">Settings</a></li>
     </ul>
 </aside>
 

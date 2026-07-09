@@ -54,7 +54,7 @@ else if ($url[0] == "user" && isset($url[1]) && $url[1] == "logout") {
 } 
 else if ($url[0] == "dashboard") {
     if (!isset($_SESSION['role'])) {
-        header("Location: /POSu/user/login");
+        header("Location: /user/login");
         exit;
     }
     $userController->dashboard();
@@ -64,7 +64,7 @@ else if ($url[0] == "dashboard") {
 // Sales Routes (Only Admin Can View)
 else if ($url[0] == "sales") {
     if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
-        header("Location: /POSu/user/login");
+        header("Location: /user/login");
         exit;
     }
 

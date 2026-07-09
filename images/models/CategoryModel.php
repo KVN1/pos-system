@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/database.php'; // Absolute path to database connection
+require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php'; // Absolute path to database connection
 
 class CategoryModel {
     private $conn;

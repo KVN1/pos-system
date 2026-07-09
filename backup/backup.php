@@ -5,7 +5,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
 }
 
 date_default_timezone_set('Asia/Manila');
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/BackupModel.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/models/BackupModel.php';
 $model = new BackupModel();
 $settings = $model->getSettings();
 
@@ -245,8 +245,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_settings'])) {
 <head>
     <meta charset="UTF-8">
     <title>Database Backup</title>
-    <link rel="stylesheet" href="/POSu/styles/stylee.css">
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/POSu/includes/sidebar.php'; ?>
+    <link rel="stylesheet" href="/styles/stylee.css">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/sidebar.php'; ?>
     <style>
         main { padding: 20px; }
         .backup-section { background:#fff;padding:20px;border-radius:12px;box-shadow:0 0 10px rgba(0,0,0,0.1);max-width:700px;margin:auto; }
@@ -302,7 +302,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_settings'])) {
         <p><b>Next Scheduled Backup:</b> <?= !empty($settings['next_backup']) ? $settings['next_backup'] : 'Not scheduled' ?></p>
 
         <br>
-        <button onclick="window.location.href='/POSu/views/settings.php'">Back to Settings</button>
+        <button onclick="window.location.href='/views/settings.php'">Back to Settings</button>
     </div>
     <hr>
 <h2>Restore from Backup</h2>

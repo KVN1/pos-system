@@ -87,8 +87,8 @@ $totalReturnedItems = count($returnedItems);
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sales Report</title>
-<link rel="stylesheet" href="/POSu/styles/stylee.css?v=<?= time(); ?>">
-<link rel="stylesheet" href="/POSu/styles/sales-style.css?v=<?= time(); ?>">
+<link rel="stylesheet" href="/styles/stylee.css?v=<?= time(); ?>">
+<link rel="stylesheet" href="/styles/sales-style.css?v=<?= time(); ?>">
 <style>
 .modal {
     display: none;

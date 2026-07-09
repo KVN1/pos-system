@@ -15,8 +15,8 @@ $categories = $categoryController->index();
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Categories - POS</title>
-<link rel="stylesheet" href="/POSu/styles/stylee.css">
-<link rel="stylesheet" href="/POSu/styles/categories-style.css?v=<?= time(); ?>">
+<link rel="stylesheet" href="/styles/stylee.css">
+<link rel="stylesheet" href="/styles/categories-style.css?v=<?= time(); ?>">
 </head>
 <body>
 <div class="dashboard">
@@ -71,7 +71,7 @@ $categories = $categoryController->index();
                                 <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
                                     <button class="save-btn" onclick="openEditModal(<?= $category['id']; ?>, '<?= htmlspecialchars($category['category_name'], ENT_QUOTES); ?>')">Edit</button>
 
-                                    <form method="POST" action="/POSu/controllers/CategoryController.php" style="display:inline;" onsubmit="return confirm('Are you sure you want to deactivate this category?');">
+                                    <form method="POST" action="/controllers/CategoryController.php" style="display:inline;" onsubmit="return confirm('Are you sure you want to deactivate this category?');">
                                         <input type="hidden" name="action" value="deactivate">
                                         <input type="hidden" name="id" value="<?= $category['id']; ?>">
                                         <button type="submit" class="cancel-btn">Deactivate</button>
@@ -103,7 +103,7 @@ $categories = $categoryController->index();
         <div class="modal-overlay" id="editModal">
             <div class="modal-content">
                 <h2>Edit Category</h2>
-                <form method="POST" action="/POSu/controllers/CategoryController.php">
+                <form method="POST" action="/controllers/CategoryController.php">
                     <input type="hidden" name="action" value="edit">
                     <input type="hidden" id="editId" name="id">
                     <input type="text" id="editName" name="category_name" required>
@@ -164,7 +164,7 @@ document.querySelector("#addCategoryForm").addEventListener("submit", function(e
     event.preventDefault();
     let formData = new FormData(this);
 
-    fetch("/POSu/controllers/CategoryController.php", {
+    fetch("/controllers/CategoryController.php", {
         method: "POST",
         body: formData
     })
@@ -193,7 +193,7 @@ function searchCategories() {
 // --- VIEW PRODUCTS ---
 function viewProducts(categoryName) {
     document.getElementById('productsSearchInput').value = ''; // reset search
-    fetch(`/POSu/controllers/CategoryController.php?action=getProducts&category_name=${encodeURIComponent(categoryName)}`)
+    fetch(`/controllers/CategoryController.php?action=getProducts&category_name=${encodeURIComponent(categoryName)}`)
     .then(response => response.json())
     .then(products => {
         let list = document.getElementById('productsList');

@@ -12,7 +12,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <title>POSu</title>
 
     <!-- Your Stylesheets -->
-    <link rel="stylesheet" href="/POSu/styles/stylee.css">
+    <link rel="stylesheet" href="/styles/stylee.css">
 
     <!-- Light/Dark Mode CSS -->
     <style>

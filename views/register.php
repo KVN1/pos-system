@@ -18,7 +18,7 @@ unset($_SESSION['register_error']);
             justify-content: center; 
             align-items: center; 
             height: 100vh; 
-            background: url('/POSu/images/login.jpg') no-repeat center center/cover; 
+            background: url('/images/login.jpg') no-repeat center center/cover; 
             font-family: Arial, sans-serif; 
         }
         .register-container { 
@@ -76,7 +76,7 @@ unset($_SESSION['register_error']);
     <div class="register-container">
 
         <div class="register-left">
-            <img src="/POSu/images/logo.png" alt="Infinite POS Logo">
+            <img src="/images/logo.png" alt="Infinite POS Logo">
             <h2>Join Infinite POS Today!</h2>
         </div>
 
@@ -87,7 +87,7 @@ unset($_SESSION['register_error']);
                 <p class="message error"><?php echo htmlspecialchars($error); ?></p>
             <?php endif; ?>
 
-<form id="registerForm" action="/POSu/index.php" method="post">
+<form id="registerForm" action="/index.php" method="post">
     <input type="hidden" name="action" value="do_register">
 
     <div class="input-group">
@@ -202,7 +202,7 @@ function checkUsername() {
         return;
     }
 
-    fetch(`/POSu/index.php?url=check_username&username=` + encodeURIComponent(username))
+    fetch(`/index.php?url=check_username&username=` + encodeURIComponent(username))
         .then(response => response.json())
         .then(data => {
             if (data.exists) {

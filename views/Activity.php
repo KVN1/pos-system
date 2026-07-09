@@ -27,8 +27,8 @@ foreach ($logs as $log) {
 ?>
 
 <?php include __DIR__ . '/../includes/sidebar.php'; ?>
-<link rel="stylesheet" href="/POSu/styles/stylee.css">
-<link rel="stylesheet" href="/POSu/styles/activitycss.css">
+<link rel="stylesheet" href="/styles/stylee.css">
+<link rel="stylesheet" href="/styles/activitycss.css">
 
 <div class="main-content">
     <h2>Activity Log</h2>

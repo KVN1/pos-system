@@ -3,7 +3,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start(); // Ensure session is started
 }
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/controllers/ProductController.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/controllers/ProductController.php';
 
 $productController = new ProductController();
 $products = $productController->getAllProducts();
@@ -86,13 +86,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Sales</title>
-    <link rel="stylesheet" href="/POSu/styles/addsales.css">
+    <link rel="stylesheet" href="/styles/addsales.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
  <!--  -->
 </head>
 <body>
 <div class="top-bar">
-    <a class="back-btn" href="http://localhost/POSu/dashboard">← Back</a>
+    <a class="back-btn" href="http://localhost/dashboard">← Back</a>
     <span>Add Sales</span>
 </div>
 

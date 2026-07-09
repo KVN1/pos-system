@@ -38,11 +38,11 @@ public function do_login() {
             $_SESSION['username'] = $user['username'];
             $_SESSION['role'] = $user['role'];
 
-            header("refresh:2;url=/POSu/dashboard");
+            header("refresh:2;url=/dashboard");
             exit;
         } else {
             echo "Invalid credentials. Redirecting back...";
-            header("refresh:2;url=/POSu/user/login");
+            header("refresh:2;url=/user/login");
             exit;
         }
     } else {
@@ -56,7 +56,7 @@ public function do_login() {
 
     public function dashboard() {
         if (!isset($_SESSION['id']) || !isset($_SESSION['role'])) {
-            header("Location: /POSu/user/login");
+            header("Location: /user/login");
             exit;
         }
         
@@ -68,7 +68,7 @@ public function do_login() {
     public function logout() {
         session_unset(); // Clear session variables
         session_destroy(); // Destroy session
-        header("Location: /POSu/user/login");
+        header("Location: /user/login");
         exit;
     }
 }

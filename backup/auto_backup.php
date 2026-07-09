@@ -1,6 +1,6 @@
 <?php
 date_default_timezone_set('Asia/Manila');
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/BackupModel.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/models/BackupModel.php';
 $model = new BackupModel();
 $settings = $model->getSettings();
 

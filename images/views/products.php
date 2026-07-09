@@ -16,7 +16,7 @@ $categories = $productController->getCategories();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - POS</title>
-    <link rel="stylesheet" href="/POSu/styles/stylee.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="/styles/stylee.css?v=<?= time(); ?>">
     <script>
         function openAddModal() {
             document.getElementById("addModal").style.display = "flex";

@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/database.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/database.php';
 
 class ProductModel {
     private $conn;

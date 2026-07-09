@@ -125,7 +125,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <div class="login-container">
         <!-- Left Section -->
         <div class="login-left">
-            <img src="/POSu/images/logo.png" alt="Infinite POS Logo">
+            <img src="/images/logo.png" alt="Infinite POS Logo">
             <h2>Welcome to Infinite POS!</h2>
         </div>
 
@@ -137,7 +137,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 <p class="error"><?php echo htmlspecialchars($_SESSION['error']); unset($_SESSION['error']); ?></p>
             <?php endif; ?>
 
-            <form action="/POSu/user/do_login" method="post">
+            <form action="/user/do_login" method="post">
                 <div class="input-group">
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" placeholder="Enter your username" required>

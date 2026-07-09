@@ -3,7 +3,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start(); // Ensure session is started
 }
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/POSu/models/ProductModel.php'; // Absolute path to CategoryModel
+require_once $_SERVER['DOCUMENT_ROOT'] . '/models/ProductModel.php'; // Absolute path to CategoryModel
 
 class ProductController {
     private $productModel;
@@ -39,7 +39,7 @@ class ProductController {
             $date_added = $_POST["date_added"];
 
             $this->productModel->insertProduct($code, $description, $category, $stock, $buy_price, $sell_price, $date_added);
-            header("Location:http://localhost/POSu/Products");
+            header("Location:http://localhost/Products");
             exit();
         }
     }

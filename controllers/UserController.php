@@ -107,7 +107,7 @@ $this->userModel->resetLoginAttempts($user['user_id']);
 
     // Show registration page
     public function show_register() {
-        require_once __DIR__ . '/../views/register.php';
+        require_once __DIR__ . '/../user/register';
     }
 
     // Process registration
@@ -178,7 +178,7 @@ public function do_register() {
 
         if (!preg_match($pattern, $password)) {
             $_SESSION['register_error'] = "Password must be at least 8 characters long and include uppercase, lowercase, number, and symbol.";
-            header("Location: /views/register.php");
+            header("Location: /user/register");
             exit();
         }
 
@@ -205,7 +205,7 @@ public function do_register() {
 
     // Show forgot password page
     public function show_forgot_password() {
-        require_once __DIR__ . '/../views/forgotpass.php';
+        require_once __DIR__ . '/../user/forgotpass';
     }
 
     // Handle forgot password
@@ -216,7 +216,7 @@ public function do_register() {
 
             if (empty($username)) {
                 $_SESSION['forgot_error'] = "Please enter your username.";
-                header("Location: /views/forgotpass.php");
+                header("Location: /user/forgotpass");
                 exit;
             }
 
@@ -224,13 +224,13 @@ public function do_register() {
 
             if (!$user) {
                 $_SESSION['forgot_error'] = "Username not found.";
-                header("Location: /views/forgotpass.php");
+                header("Location: /user/forgotpass");
                 exit;
             }
 
             if ($code !== '112345') {
                 $_SESSION['forgot_error'] = "Invalid verification code.";
-                header("Location: /views/forgotpass.php");
+                header("Location: /user/forgotpass");
                 exit;
             }
 

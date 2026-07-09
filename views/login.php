@@ -58,7 +58,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url('/POSu/images/login.jpg') no-repeat center center/cover;
+    background: url('/images/login.jpg') no-repeat center center/cover;
 }
 
 
@@ -161,7 +161,7 @@ body {
     <div class="login-container">
         <!-- Left Section -->
         <div class="login-left">
-            <img src="/POSu/images/logo.png" alt="Infinite POS Logo">
+            <img src="/images/logo.png" alt="Infinite POS Logo">
             <h2>Welcome to Infinite POS!</h2>
         </div>
 
@@ -208,7 +208,7 @@ body {
     <?php endif; ?>
 
 
-            <form action="/POSu/user/do_login" method="post">
+            <form action="/user/do_login" method="post">
                 <div class="input-group">
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" placeholder="Enter your username" required>
@@ -238,12 +238,12 @@ body {
                     <div>Secret Key: <strong>112345</strong></div>
                 </div>
 
-                <a href="/POSu/views/register.php" style="display: block; margin-top: 15px; text-decoration: none;">
+                <a href="/user/register" style="display: block; margin-top: 15px; text-decoration: none;">
                     <button type="button" class="login-btn" style="background: #6c757d;">Register</button>
                 </a>
 <br>
                     <div class="forgot-password">
-                    <a href="/POSu/views/forgotpass.php">Forgot your password?</a>
+                    <a href="/user/forgotpass">Forgot your password?</a>
                 </div>
             </form>
         </div>

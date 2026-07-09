@@ -53,7 +53,7 @@ if ($code !== $verificationCode) {
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: url('/POSu/images/login.jpg') no-repeat center center/cover;
+            background: url('/images/login.jpg') no-repeat center center/cover;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -144,7 +144,7 @@ if ($code !== $verificationCode) {
             <input type="submit" value="Next">
         </form>
 
-        <a href="/POSu/user/login" class="back-link">Back to Login</a>
+        <a href="/user/login" class="back-link">Back to Login</a>
     </div>
 </body>
 </html>
