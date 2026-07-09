@@ -1,22 +1,47 @@
 <?php
 // Railway PHP built-in server router
-// Handles URL rewriting since .htaccess doesn't work with built-in server
 
 $uri = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
-// Serve static files directly (css, js, images, fonts)
-if ($uri !== '/' && file_exists(__DIR__ . $uri)) {
-    return false;
+// Get file extension
+$ext = pathinfo($uri, PATHINFO_EXTENSION);
+
+// Serve static files directly
+$static_extensions = ['css', 'js', 'png', 'jpg', 'jpeg', 'gif', 'svg', 
+                       'ico', 'woff', 'woff2', 'ttf', 'eot', 'map', 'pdf'];
+
+if (in_array(strtolower($ext), $static_extensions)) {
+    $file = __DIR__ . $uri;
+    if (file_exists($file)) {
+        // Set correct MIME type
+        $mime_types = [
+            'css'   => 'text/css',
+            'js'    => 'application/javascript',
+            'png'   => 'image/png',
+            'jpg'   => 'image/jpeg',
+            'jpeg'  => 'image/jpeg',
+            'gif'   => 'image/gif',
+            'svg'   => 'image/svg+xml',
+            'ico'   => 'image/x-icon',
+            'woff'  => 'font/woff',
+            'woff2' => 'font/woff2',
+            'ttf'   => 'font/ttf',
+            'eot'   => 'application/vnd.ms-fontobject',
+        ];
+        if (isset($mime_types[$ext])) {
+            header('Content-Type: ' . $mime_types[$ext]);
+        }
+        readfile($file);
+        exit;
+    }
 }
 
-// Strip leading slash and pass as url parameter
+// Strip leading slash
 $url = ltrim($uri, '/');
 
-// Remove any POSu prefix if present
+// Remove POSu prefix if present
 $url = preg_replace('#^POSu/?#', '', $url);
 
-// Set the url parameter for index.php routing
+// Pass to index.php
 $_GET['url'] = $url;
-
-// Load index.php
 require_once __DIR__ . '/index.php';
