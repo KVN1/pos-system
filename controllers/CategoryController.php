@@ -115,12 +115,12 @@ class CategoryController {
                 }
                 $_SESSION['flash_message'] = "Category restored successfully!";
                 $_SESSION['flash_type'] = "success";
-                header("Location: /settings");
+                header("Location: /categories");
                 exit;
             } else {
                 $_SESSION['flash_message'] = "Failed to restore category.";
                 $_SESSION['flash_type'] = "error";
-                header("Location: /settings");
+                header("Location: /categories");
                 exit;
             }
         }

@@ -488,7 +488,7 @@ if ($damagedQty > 0) {
         $_SESSION['flash_message'] = "Batch restored successfully";
         $_SESSION['flash_type'] = "success";
     }
-    header("Location: /settings");
+    header("Location: /products");
     exit();
 }
 

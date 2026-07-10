@@ -83,6 +83,28 @@ switch (strtolower($url[0])) {
 
     case "products":
         requireLogin();
+        // AJAX search
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search'])) {
+            $search = $_POST['search'];
+            $products = $productController->productModel->getProductBySearch($search);
+            if (!empty($products)) {
+                $result = [];
+                foreach ($products as $product) {
+                    $result[] = "{$product['code']}|{$product['description']}|{$product['sell_price']}|{$product['perishability']}";
+                }
+                echo implode("
+", $result);
+            } else {
+                echo "not_found";
+            }
+            exit;
+        }
+        // AJAX get by category
+        if (isset($_GET['action'], $_GET['category_name']) && $_GET['action'] === 'getByCategory') {
+            $prods = $productController->getByCategoryName($_GET['category_name']);
+            echo json_encode($prods);
+            exit;
+        }
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
             // Route to correct product method based on action
             switch ($_POST['action']) {

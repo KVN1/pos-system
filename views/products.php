@@ -1,9 +1,9 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
-    if (session_status() === PHP_SESSION_NONE) { session_start(); }
+    session_start();
 }
 include 'includes/header.php';
-require_once 'controllers/ProductController.php';
+// Controller already loaded by router
 
 $productController = new ProductController();
 $products = $productController->index(); // returns all products
@@ -1064,7 +1064,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if(result.isConfirmed){
                     const singleForm = document.createElement('form');
                     singleForm.method = 'POST';
-                    singleForm.action = '/controllers/ProductController.php';
+                    singleForm.action = '/products';
                     singleForm.innerHTML = `
                         <input type="hidden" name="action" value="reorder">
                         <input type="hidden" name="reorder_qty[${this.dataset.product}][${this.dataset.batch}]" value="${qty}">
