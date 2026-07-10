@@ -127,9 +127,22 @@ case "discounts":
 
     case "settings":
         if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
-        require_once __DIR__ . "/../controllers/SystemSettingsController.php";
-        $settingsController = new SystemSettingsController();
-        $settingsController->index();
+        require_once __DIR__ . "/../models/SystemSettingsModel.php";
+        $settingsModel = new SystemSettingsModel();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_code'])) {
+            $newCode = trim($_POST['verification_code']);
+            if (preg_match('/^\d{6}$/', $newCode)) {
+                $settingsModel->updateVerificationCode($newCode);
+                $_SESSION['flash_message'] = "System verification code updated!";
+                $_SESSION['flash_type'] = "success";
+            } else {
+                $_SESSION['flash_message'] = "Invalid code. Must be 6 digits.";
+                $_SESSION['flash_type'] = "error";
+            }
+            header("Location: /settings");
+            exit;
+        }
+        include __DIR__ . "/../views/settings.php";
         break;
 
     case "expenses":
