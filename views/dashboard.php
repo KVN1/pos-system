@@ -67,7 +67,7 @@ $scheduler->checkAndRunBackup();
         </a>
     <?php endif; ?>
 
-    <a href="/views/notifications.php" class="image-btn" style="position: relative;">
+    <a href="/notifications" class="image-btn" style="position: relative;">
         <img src="/images/notif.png" alt="Notifications">
         <span>Notifications</span>
         <?php if (!empty($dashboardData['notifications']) && count($dashboardData['notifications']) > 0): ?>
@@ -75,7 +75,7 @@ $scheduler->checkAndRunBackup();
         <?php endif; ?>
     </a>
 
-    <a href="/views/settings.php" class="image-btn">
+    <a href="/settings" class="image-btn">
         <img src="/images/settings.png" alt="Settings">
         <span>Settings</span>
     </a>

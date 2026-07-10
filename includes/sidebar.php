@@ -33,14 +33,14 @@ function checkNotifications() {
         <li><a class="nav-link <?= (strpos($current_page, 'Categories') !== false) ? 'active' : '' ?>" href="/Categories">Categories</a></li>
 
         <li>
-            <a class="nav-link <?= (strpos($current_page, 'notifications') !== false) ? 'active' : '' ?>" href="/views/notifications.php">
+            <a class="nav-link <?= (strpos($current_page, 'notifications') !== false) ? 'active' : '' ?>" href="/notifications">
                 Notifications
                 <?php if (checkNotifications()): ?>
                     <span class="notification-badge">!</span>
                 <?php endif; ?>
             </a>
         </li>
-        <li><a class="nav-link <?= (strpos($current_page, 'settings') !== false) ? 'active' : '' ?>" href="/views/settings.php">Settings</a></li>
+        <li><a class="nav-link <?= (strpos($current_page, 'settings') !== false) ? 'active' : '' ?>" href="/settings">Settings</a></li>
     </ul>
 </aside>
 
