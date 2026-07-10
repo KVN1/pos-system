@@ -28,7 +28,7 @@ class CategoryController {
     // Show active categories page
     public function categories() {
         $categories = $this->categoryModel->getActiveCategories();
-        require_once(__DIR__ . '/../categories');
+        include __DIR__ . '/../views/categories.php';
     }
 
     // Fetch active categories

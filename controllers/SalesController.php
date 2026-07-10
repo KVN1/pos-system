@@ -143,8 +143,7 @@ exit();
     }
 
     public function salesReport() {
-        header('Location: /sales');
-        exit();
+        include __DIR__ . '/../views/sales.php';
     }
 
     public function calculateTotal($items) {
