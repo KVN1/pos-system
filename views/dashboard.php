@@ -1,6 +1,6 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) { session_start(); }
 }
 
 // Make sure $dashboardData exists and is an array
