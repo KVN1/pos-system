@@ -121,13 +121,13 @@ case "discounts":
 
     case "notifications":
         if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
-        require_once __DIR__ . "/../controllers/ActivityLogController.php";
-        include __DIR__ . "/../views/notifications.php";
+        require_once "controllers/ActivityLogController.php";
+        include "views/notifications.php";
         break;
 
     case "settings":
         if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
-        require_once __DIR__ . "/../models/SystemSettingsModel.php";
+        require_once "models/SystemSettingsModel.php";
         $settingsModel = new SystemSettingsModel();
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_code'])) {
             $newCode = trim($_POST['verification_code']);
@@ -142,48 +142,48 @@ case "discounts":
             header("Location: /settings");
             exit;
         }
-        include __DIR__ . "/../views/settings.php";
+        include "views/settings.php";
         break;
 
     case "expenses":
         if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
-        include __DIR__ . "/../views/expenses.php";
+        include "views/expenses.php";
         break;
 
     case "activity":
         if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
-        include __DIR__ . "/../views/Activity.php";
+        include "views/Activity.php";
         break;
 
     case "usermanual":
         if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
-        include __DIR__ . "/../views/usermanual.php";
+        include "views/usermanual.php";
         break;
 
     case "admin":
         if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
-        include __DIR__ . "/../views/admin.php";
+        include "views/admin.php";
         break;
 
     case "return-item":
         if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
-        require_once __DIR__ . "/../controllers/SalesController.php";
-        include __DIR__ . "/../views/return_item.php";
+        require_once "controllers/SalesController.php";
+        include "views/return_item.php";
         break;
 
     case "return-sale":
         if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
-        include __DIR__ . "/../views/return_sale.php";
+        include "views/return_sale.php";
         break;
 
     case "search-expired":
         if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
-        include __DIR__ . "/../views/search-expired.php";
+        include "views/search-expired.php";
         break;
 
     case "change-password":
         if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
-        include __DIR__ . "/../views/change_password.php";
+        include "views/change_password.php";
         break;
 
     case "checkout":
@@ -191,7 +191,7 @@ case "discounts":
         break;
 
     case "export-sales":
-        include __DIR__ . "/../views/exportSales.php";
+        include "views/exportSales.php";
         break;
 
     default:
