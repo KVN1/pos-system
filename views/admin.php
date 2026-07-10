@@ -12,7 +12,7 @@ session_start();
 </head>
 <body>
     <div class="dashboard">
-        <?php include '../includes/admin_sidebar.php'; ?>
+        <?php include __DIR__ . '/../includes/admin_sidebar.php'; ?>
         <main class="main-content">
             <header class="header">
                 <h1>ADMIN</h1>

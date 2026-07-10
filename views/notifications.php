@@ -98,7 +98,7 @@ th { background: #f2f2f2; }
 </style>
 </head>
 <body>
-<?php include '../includes/sidebar.php'; ?>
+<?php include __DIR__ . '/../includes/sidebar.php'; ?>
 
 <div class="main-content">
     <h1>Product Notifications</h1>

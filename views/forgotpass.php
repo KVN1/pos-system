@@ -3,10 +3,10 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-require_once '../models/UserModel.php'; // adjust the path if needed
+require_once __DIR__ . '/../models/UserModel.php'; // adjust the path if needed
 $userModel = new UserModel();
 
-require_once '../models/SystemSettingsModel.php';
+require_once __DIR__ . '/../models/SystemSettingsModel.php';
 $settingsModel = new SystemSettingsModel();
 $verificationCode = $settingsModel->getVerificationCode();
 

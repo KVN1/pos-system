@@ -194,6 +194,11 @@ case "discounts":
         include "views/exportSales.php";
         break;
 
+        case "backup":
+    if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
+    include "backup.php";
+    break;
+
     default:
         if (empty($url[0]) || $url[0] === '') {
             header("Location: /user/login");

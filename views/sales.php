@@ -140,7 +140,7 @@ $totalReturnedItems = count($returnedItems);
 </head>
 <body>
 <div class="dashboard">
-    <?php include '../includes/sidebar.php'; ?>
+    <?php include __DIR__ . '/../includes/sidebar.php'; ?>
     <main class="main-content">
         <header class="header" style="display: flex; align-items: center; justify-content: space-between;">
     <h1>Sales Report</h1>
