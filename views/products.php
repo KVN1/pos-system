@@ -496,7 +496,7 @@ document.querySelectorAll('.expand-btn').forEach(btn => {
         Edit
     </button>
 
-    <form method="POST" action="controllers/ProductController.php" style="display:inline;" 
+    <form method="POST" action="/products" style="display:inline;" 
           onsubmit="return confirm('Are you sure you want to deactivate this product?');">
         <input type="hidden" name="action" value="delete">
         <input type="hidden" name="id" value="<?= $product['id'] ?>">
@@ -545,7 +545,7 @@ document.querySelectorAll('.expand-btn').forEach(btn => {
                     )">
                 Edit
             </button>
-            <form method="POST" action="controllers/ProductController.php" style="display:inline;" 
+            <form method="POST" action="/products" style="display:inline;" 
                   onsubmit="return confirm('Are you sure you want to deactivate this batch?');">
                 <input type="hidden" name="action" value="delete_batch">
                 <input type="hidden" name="batch_id" value="<?= $batch['batch_id'] ?>">
@@ -735,7 +735,7 @@ function renderPagination() {
 <div class="modal-overlay" id="addModal">
     <div class="modal-content">
         <h2>Add Product</h2>
-        <form method="POST" action="/controllers/ProductController.php" id="addProductForm">
+        <form method="POST" action="/products" id="addProductForm">
             <input type="hidden" name="action" value="add">
 
             <label>Product Code</label>
@@ -817,7 +817,7 @@ function renderPagination() {
 <div class="modal-overlay" id="editModal">
     <div class="modal-content">
         <h2>Edit Product</h2>
-        <form method="POST" action="/controllers/ProductController.php" id="editProductForm">
+        <form method="POST" action="/products" id="editProductForm">
             <input type="hidden" name="action" value="edit">
             <input type="hidden" name="id" id="edit_id">
             <input type="hidden" name="date_added" id="edit_date_added">
@@ -919,7 +919,7 @@ function renderPagination() {
     <div class="modal-content">
         <h2>Low/No Stock (≤20)</h2>
 
-        <form method="POST" action="/controllers/ProductController.php" id="reorderForm">
+        <form method="POST" action="/products" id="reorderForm">
             <input type="hidden" name="action" value="reorder">
 
             <table id="reorderTable">
@@ -1120,7 +1120,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="modal-content" style="max-width: 500px;">
         <h2>Return Damaged Item</h2>
 
-        <form id="returnDamagedForm" method="POST" action="/controllers/ProductController.php">
+        <form id="returnDamagedForm" method="POST" action="/products">
 
             <input type="hidden" name="action" value="return_damaged">
             <input type="hidden" name="damaged_id" id="return_damaged_id">
@@ -1180,7 +1180,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="modal-overlay" id="editBatchModal">
     <div class="modal-content">
         <h2>Edit Batch</h2>
-        <form method="POST" action="/controllers/ProductController.php" id="editBatchForm">
+        <form method="POST" action="/products" id="editBatchForm">
             <input type="hidden" name="action" value="edit_batch">
             <input type="hidden" name="batch_id" id="modal_batch_id">
             <input type="hidden" name="product_id" id="modal_product_id">

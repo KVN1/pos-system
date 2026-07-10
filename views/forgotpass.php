@@ -128,7 +128,7 @@ if ($code !== $verificationCode) {
 </head>
 <body>
     <div class="forgot-container">
-        <form action="forgotpass.php" method="POST">
+        <form action="/user/forgotpass" method="POST">
             <h3>Forgot Password</h3>
 
             <?php if (isset($_SESSION['forgot_error'])): ?>

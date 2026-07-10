@@ -229,7 +229,7 @@ if (isset($_POST['addProduct']) && $productCode) {
         <p><strong>To Pay:</strong> ₱<?= number_format($totalAfterDiscount,2); ?></p>
         <p><strong>Cash:</strong> ₱<?= number_format($_SESSION['cashGiven'],2); ?></p>
         <p><strong>Change:</strong> ₱<?= number_format($_SESSION['changeAmount'],2); ?></p>
-        <form method="POST" action="/controllers/SalesController.php">
+        <form method="POST" action="/add-sales-page">
             <input type="hidden" name="proceedSale" value="1">
             <button type="submit" class="proceed-btn">CONFIRM</button>
             <button type="button" id="cancelSaleBtn" class="cancel-btn">Cancel</button>

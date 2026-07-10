@@ -73,7 +73,7 @@ $categories = $categoryController->index();
     <div class="modal-overlay" id="editModal">
         <div class="modal-content">
             <h2>Edit Category</h2>
-                <form method="POST" action="/controllers/CategoryController.php">
+                <form method="POST" action="/categories">
                 <input type="hidden" name="action" value="edit">
                 <input type="hidden" id="editId" name="id">
                 <input type="text" id="editName" name="category_name" required>

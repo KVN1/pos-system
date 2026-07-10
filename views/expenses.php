@@ -98,7 +98,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <div class="modal-overlay" id="add-expense-modal" style="display: none;">
     <div class="modal-content">
         <h2>Add New Expense</h2>
-        <form id="add-expense-form" method="POST" action="add-expense.php"> <!-- Update this to your PHP handler -->
+        <form id="add-expense-form" method="POST" action="/expenses/add"> <!-- Update this to your PHP handler -->
             <label for="expense-type">Type of Expense:</label>
             <select id="expense-type" name="type" required>
                 <option value="Salary">Salary</option>

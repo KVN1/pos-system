@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 '<?= $product['sell_price']; ?>',
                                 '<?= htmlspecialchars($product['expiry']); ?>'
                             )">Edit</button>
-                            <form method="POST" action="controllers/ProductController.php" onsubmit="return confirm('Are you sure you want to remove this product?');" style="display:inline;">
+                            <form method="POST" action="/products" onsubmit="return confirm('Are you sure you want to remove this product?');" style="display:inline;">
                                 <input type="hidden" name="action" value="delete">
                                 <input type="hidden" name="id" value="<?= $product['id']; ?>">
                                 <button type="submit" class="delete-btn">Deactivate</button>

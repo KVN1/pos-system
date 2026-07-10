@@ -71,7 +71,7 @@ $categories = $categoryController->index();
                                 <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
                                     <button class="save-btn" onclick="openEditModal(<?= $category['id']; ?>, '<?= htmlspecialchars($category['category_name'], ENT_QUOTES); ?>')">Edit</button>
 
-                                    <form method="POST" action="/controllers/CategoryController.php" style="display:inline;" onsubmit="return confirm('Are you sure you want to deactivate this category?');">
+                                    <form method="POST" action="/categories" style="display:inline;" onsubmit="return confirm('Are you sure you want to deactivate this category?');">
                                         <input type="hidden" name="action" value="deactivate">
                                         <input type="hidden" name="id" value="<?= $category['id']; ?>">
                                         <button type="submit" class="cancel-btn">Deactivate</button>
@@ -103,7 +103,7 @@ $categories = $categoryController->index();
         <div class="modal-overlay" id="editModal">
             <div class="modal-content">
                 <h2>Edit Category</h2>
-                <form method="POST" action="/controllers/CategoryController.php">
+                <form method="POST" action="/categories">
                     <input type="hidden" name="action" value="edit">
                     <input type="hidden" id="editId" name="id">
                     <input type="text" id="editName" name="category_name" required>

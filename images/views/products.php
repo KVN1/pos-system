@@ -112,7 +112,7 @@ $categories = $productController->getCategories();
                                             '<?= htmlspecialchars($product['expiry'] ?? ''); ?>'
                                         )">Edit</button>
 
-                                        <form method="POST" action="controllers/ProductController.php" onsubmit="return confirm('Are you sure you want to delete this product?');" style="display:inline;">
+                                        <form method="POST" action="/products" onsubmit="return confirm('Are you sure you want to delete this product?');" style="display:inline;">
                                             <input type="hidden" name="action" value="delete">
                                             <input type="hidden" name="id" value="<?= $product['id']; ?>">
                                             <button type="submit" class="delete-btn">Delete</button>
@@ -131,7 +131,7 @@ $categories = $productController->getCategories();
 <div class="modal-overlay" id="addModal">
     <div class="modal-content">
         <h2>Add Product</h2>
-        <form method="POST" action="controllers/ProductController.php">
+        <form method="POST" action="/products">
             <input type="hidden" name="action" value="add">
             <input type="hidden" name="date_added" id="date_added">
 
@@ -193,7 +193,7 @@ $categories = $productController->getCategories();
 <div class="modal-overlay" id="editModal">
     <div class="modal-content">
         <h2>Edit Product</h2>
-        <form method="POST" action="controllers/ProductController.php">
+        <form method="POST" action="/products">
             <input type="hidden" name="action" value="edit">
             <input type="hidden" name="id" id="edit_id">
 

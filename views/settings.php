@@ -96,7 +96,7 @@ $verificationCode = $settingsModel->getVerificationCode();
         <h2>Edit Discounts & System Code</h2>
 
         <!-- Discounts Form -->
-        <form method="POST" action="/index.php?url=discounts">
+        <form method="POST" action="/discounts">
             <table class="modal-table">
                 <thead>
                     <tr>
@@ -123,7 +123,7 @@ $verificationCode = $settingsModel->getVerificationCode();
         </form>
 
 <!-- System Code Section -->
-<form method="POST" action="/controllers/SystemSettingsController.php" 
+<form method="POST" action="/settings" 
       style="display: flex; align-items: center; gap: 10px; margin-top: 20px;">
 
     <label for="verification_code" style="font-weight:bold; white-space: nowrap;">
@@ -217,7 +217,7 @@ function toggleCodeVisibility() {
                     <td><?= htmlspecialchars($product['description']) ?></td>
                     <td><?= htmlspecialchars($product['category']) ?></td>
                     <td>
-                        <form method="POST" action="/controllers/ProductController.php">
+                        <form method="POST" action="/products">
                             <input type="hidden" name="action" value="restore">
                             <input type="hidden" name="id" value="<?= $product['id']; ?>">
                             <button type="submit" class="restore-btn">Restore</button>
@@ -248,7 +248,7 @@ function toggleCodeVisibility() {
                     <td><?= htmlspecialchars($batch['description']); ?></td>
                     <td><?= htmlspecialchars($batch['batch_id']); ?></td>
                     <td>
-                        <form method="POST" action="/controllers/ProductController.php">
+                        <form method="POST" action="/products">
                             <input type="hidden" name="action" value="restore_batch">
                             <input type="hidden" name="batch_id" value="<?= $batch['batch_id']; ?>">
                             <button type="submit" class="restore-btn">Restore</button>
@@ -278,7 +278,7 @@ function toggleCodeVisibility() {
                 <tr>
                     <td><?= htmlspecialchars($category['category_name']); ?></td>
                     <td>
-                        <form method="POST" action="/controllers/CategoryController.php">
+                        <form method="POST" action="/categories">
                             <input type="hidden" name="action" value="restore">
                             <input type="hidden" name="id" value="<?= $category['id']; ?>">
                             <button type="submit" class="restore-btn">Restore</button>
@@ -330,7 +330,7 @@ function toggleCodeVisibility() {
                             <td><?= htmlspecialchars($user['role']) ?></td>
                             <td><?= htmlspecialchars($user['status']) ?></td>
                             <td>
-                                <form method="POST" action="/controllers/UserController.php">
+                                <form method="POST" action="/user/handle">
                                     <input type="hidden" name="user_id" value="<?= $user['user_id']; ?>">
                                     <input type="hidden" name="action" value="deactivate_user">
                                     <button type="submit" class="delete-btn">Deactivate</button>
@@ -366,7 +366,7 @@ function toggleCodeVisibility() {
                             <td><?= htmlspecialchars($user['role']) ?></td>
                             <td><?= htmlspecialchars($user['status']) ?></td>
                             <td>
-                                <form method="POST" action="/controllers/UserController.php">
+                                <form method="POST" action="/user/handle">
                                     <input type="hidden" name="user_id" value="<?= $user['user_id']; ?>">
                                     <input type="hidden" name="action" value="activate_user">
                                     <button type="submit" class="restore-btn">Activate</button>

@@ -370,7 +370,7 @@ function exportCSV() {
     <div class="modal-content">
         <span class="close" onclick="closeItemReturnModal()">&times;</span>
         <h2>Return Item</h2>
-        <form id="item-return-form" method="POST" action="return_item.php" onsubmit="return confirmItemReturn()">
+        <form id="item-return-form" method="POST" action="/return-item" onsubmit="return confirmItemReturn()">
             <input type="hidden" name="sale_id" id="return-sale-id">
             <input type="hidden" name="return_item_id" id="return-item-id">
             <label for="item-return-reason"><strong>Reason for Item Return:</strong></label>
@@ -386,7 +386,7 @@ function exportCSV() {
     <div class="modal-content">
         <span class="close" onclick="closeSaleReturnModal()">&times;</span>
         <h2>Return Entire Sale</h2>
-        <form id="sale-return-form" method="POST" action="return_sale.php" onsubmit="return confirmSaleReturn()">
+        <form id="sale-return-form" method="POST" action="/return-sale" onsubmit="return confirmSaleReturn()">
             <input type="hidden" name="sale_id" id="return-sale-id-full">
 
             <label><strong>Reason for returning entire sale:</strong></label>
