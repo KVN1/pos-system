@@ -16,6 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_code'])) {
         $_SESSION['flash_type'] = "error";
     }
 
-    header("Location: /views/settings.php");
+    header("Location: /settings");
     exit;
 }

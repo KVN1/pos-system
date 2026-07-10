@@ -13,11 +13,11 @@ if (session_status() === PHP_SESSION_NONE) {
 
     <ul class="nav">
         <!-- Dashboard is accessible to all roles -->
-        <li><a class="nav-link" href="/views/dashboard.php">Dashboard</a></li>
+        <li><a class="nav-link" href="/dashboard">Dashboard</a></li>
 
         <!-- Add-Sales is only for managers -->
         <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin','cashier'): ?>
-            <li><a class="nav-link" href="/views/add-sales.php">Add-Sales</a></li>
+            <li><a class="nav-link" href="/add-sales-page">Add-Sales</a></li>
         <?php endif; ?>
 
         <!-- Sales is accessible to both admin and manager -->
@@ -25,21 +25,21 @@ if (session_status() === PHP_SESSION_NONE) {
 
         <!-- Products and Categories are only for managers -->
         <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'cashier', 'admin'): ?>
-            <li><a class="nav-link" href="/views/products.php">Products</a></li>
-            <li><a class="nav-link" href="/views/categories.php">Categories</a></li>
+            <li><a class="nav-link" href="/products">Products</a></li>
+            <li><a class="nav-link" href="/categories">Categories</a></li>
         <?php endif; ?>
 
         <!-- Admin panel is only visible to admin -->
         <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
-            <li><a class="nav-link" href="/views/admin.php">Admin</a></li>
+            <li><a class="nav-link" href="/admin">Admin</a></li>
         <?php endif; ?>
 
         <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
-            <li><a class="nav-link" href="/views/sales.php">Sales</a></li>
+            <li><a class="nav-link" href="/sales">Sales</a></li>
         <?php endif; ?>
 
         <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'cashier'): ?>
-            <li><a class="nav-link" href="/views/admin.php">Manager</a></li>
+            <li><a class="nav-link" href="/admin">Manager</a></li>
         <?php endif; ?>
 
         <!-- Settings Dropdown - Available for all roles -->

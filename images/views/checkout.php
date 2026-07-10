@@ -93,7 +93,7 @@ function calculateChange() {
 
 function finalizeTransaction() {
     alert("Transaction successful! Printing receipt...");
-    window.location.href = "/views/dashboard.php";
+    window.location.href = "/dashboard";
 }
 
 loadCartItems();

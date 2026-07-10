@@ -7,7 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <!-- Sidebar -->
 <aside class="sidebar">
     <div class="sidebar-header">
-        <a href="/views/dashboard.php" class="sidebar-brand">
+        <a href="/dashboard" class="sidebar-brand">
             <img src="/images/logo.png" alt="Logo">
         </a>
     </div>

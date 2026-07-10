@@ -31,7 +31,7 @@ public function update() {
             $_SESSION['error'] = "Failed to update discount";
         }
 
-        header("Location: /views/settings.php");
+        header("Location: /settings");
         exit;
     }
 }

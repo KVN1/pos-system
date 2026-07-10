@@ -16,7 +16,7 @@ class SalesController {
     // Show all sales
     public function index() {
         $sales = $this->salesModel->getAllSales();
-        include __DIR__ . '/../views/sales.php';
+        include __DIR__ . '/../sales';
     }
 
     // Show details of a single sale

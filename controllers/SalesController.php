@@ -20,7 +20,7 @@ public function processSale() {
 if (empty($_SESSION['sales'])) {
 $_SESSION['flash_message'] = "No items in cart to process.";
 $_SESSION['flash_type'] = "error";
-header("Location: /views/add-sales.php");
+header("Location: /add-sales-page");
 exit();
 }
 
@@ -38,7 +38,7 @@ foreach ($salesData as $item) {
     if (!$this->salesModel->hasSufficientStock($item['code'], $quantity)) {
         $_SESSION['flash_message'] = "Item {$item['description']} is out of stock!";
         $_SESSION['flash_type'] = "error";
-        header("Location: /views/add-sales.php");
+        header("Location: /add-sales-page");
         exit();
     }
 }
@@ -48,7 +48,7 @@ $sale_id = $this->salesModel->addSale($user_id, $totalAmount, $paymentMethod, $c
 if (!$sale_id) {
     $_SESSION['flash_message'] = "Failed to save sale. Please try again.";
     $_SESSION['flash_type'] = "error";
-    header("Location: /views/add-sales.php");
+    header("Location: /add-sales-page");
     exit();
 }
 
@@ -92,7 +92,7 @@ unset(
 // 6️⃣ Flash success
 $_SESSION['flash_message'] = "Sale processed successfully!";
 $_SESSION['flash_type'] = "success";
-header("Location: /views/add-sales.php");
+header("Location: /add-sales-page");
 exit();
 
 }
@@ -143,7 +143,7 @@ exit();
     }
 
     public function salesReport() {
-        header('Location: /views/sales.php');
+        header('Location: /sales');
         exit();
     }
 

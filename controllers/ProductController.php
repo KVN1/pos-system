@@ -377,7 +377,7 @@ if ($damagedQty > 0) {
             $_SESSION['flash_message'] = "Product restored successfully";
             $_SESSION['flash_type'] = "success";
         }
-        header("Location: /views/settings.php#deactivatedModal");
+        header("Location: /settings#deactivatedModal");
         exit();
     }
 
@@ -488,7 +488,7 @@ if ($damagedQty > 0) {
         $_SESSION['flash_message'] = "Batch restored successfully";
         $_SESSION['flash_type'] = "success";
     }
-    header("Location: /views/settings.php");
+    header("Location: /settings");
     exit();
 }
 

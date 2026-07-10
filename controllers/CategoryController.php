@@ -28,7 +28,7 @@ class CategoryController {
     // Show active categories page
     public function categories() {
         $categories = $this->categoryModel->getActiveCategories();
-        require_once(__DIR__ . '/../views/categories.php');
+        require_once(__DIR__ . '/../categories');
     }
 
     // Fetch active categories
@@ -115,12 +115,12 @@ class CategoryController {
                 }
                 $_SESSION['flash_message'] = "Category restored successfully!";
                 $_SESSION['flash_type'] = "success";
-                header("Location: /views/settings.php");
+                header("Location: /settings");
                 exit;
             } else {
                 $_SESSION['flash_message'] = "Failed to restore category.";
                 $_SESSION['flash_type'] = "error";
-                header("Location: /views/settings.php");
+                header("Location: /settings");
                 exit;
             }
         }

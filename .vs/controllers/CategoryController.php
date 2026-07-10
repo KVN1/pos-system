@@ -13,7 +13,7 @@ class CategoryController {
     }
 
     public function categories() {
-        require_once $_SERVER['DOCUMENT_ROOT'] . '/views/categories.php'; // Absolute path to categories view
+        require_once $_SERVER['DOCUMENT_ROOT'] . '/categories'; // Absolute path to categories view
     }
 
     public function index() {
@@ -63,7 +63,7 @@ public function create() {
     public function delete() {
         if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["id"])) {
             $this->categoryModel->deleteCategory($_POST["id"]);
-            header("Location: " . $_SERVER['DOCUMENT_ROOT'] . '/views/categories.php'); // Absolute redirect
+            header("Location: " . $_SERVER['DOCUMENT_ROOT'] . '/categories'); // Absolute redirect
             exit;
         }
     }

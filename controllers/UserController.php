@@ -192,7 +192,7 @@ public function do_register() {
             header("Location: /user/login");
             exit;
         }
-        require_once __DIR__ . '/../views/dashboard.php';
+        require_once __DIR__ . '/../dashboard';
     }
 
     // Logout
@@ -235,7 +235,7 @@ public function do_register() {
             }
 
             $_SESSION['reset_username'] = $username;
-            header("Location: /views/change_password.php");
+            header("Location: /change-password");
             exit;
         }
     }
@@ -254,7 +254,7 @@ public function do_register() {
             } else {
                 $_SESSION['error'] = "Failed to activate user.";
             }
-            header("Location: /views/settings.php");
+            header("Location: /settings");
             exit;
         }
     }
@@ -288,7 +288,7 @@ public function check_username() {
             } else {
                 $_SESSION['error'] = "Failed to deactivate user.";
             }
-            header("Location: /views/settings.php");
+            header("Location: /settings");
             exit;
         }
     }
@@ -322,7 +322,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
     break;
 
         default:
-            header("Location: /views/settings.php");
+            header("Location: /settings");
             exit;
     }
 }

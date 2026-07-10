@@ -79,13 +79,13 @@ $verificationCode = $settingsModel->getVerificationCode();
 
     <div class="button-container">
         <?php if ($role === 'admin'): ?>
-            <button class="settings-btn" onclick="window.location.href='/views/Activity.php'">Activity Log</button>
+            <button class="settings-btn" onclick="window.location.href='/activity'">Activity Log</button>
             <button class="settings-btn" onclick="openModal('usersModal')">Users</button>
             <button class="settings-btn" onclick="openModal('deactivatedModal')">Archives</button>
             <button class="settings-btn" onclick="window.location.href='/backup/backup.php'">Backup Database</button>
             <button class="settings-btn" onclick="openModal('discountsModal')">Discounts/Codes</button>
         <?php endif; ?>
-        <a class="settings-btn" href="/views/usermanual.php">User Manual</a>
+        <a class="settings-btn" href="/usermanual">User Manual</a>
     </div>
 
 <!-- Discounts Modal -->

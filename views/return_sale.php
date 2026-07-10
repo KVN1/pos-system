@@ -4,7 +4,7 @@ require_once __DIR__ . '/../controllers/SalesReportController.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     $_SESSION['error'] = 'Invalid request method.';
-    header('Location: /views/sales.php');
+    header('Location: /sales');
     exit;
 }
 
@@ -14,7 +14,7 @@ $user_id = $_SESSION['user_id'] ?? null;
 
 if (!$sale_id || !$user_id) {
     $_SESSION['error'] = 'Sale or user not found.';
-    header('Location: /views/sales.php');
+    header('Location: /sales');
     exit;
 }
 
@@ -27,6 +27,6 @@ if ($result) {
     $_SESSION['error'] = 'Failed to return sale.';
 }
 
-header('Location: /views/sales.php');
+header('Location: /sales');
 exit;
 ?>
