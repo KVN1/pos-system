@@ -119,6 +119,68 @@ case "discounts":
 
 
 
+    case "notifications":
+        if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
+        require_once __DIR__ . "/../controllers/ActivityLogController.php";
+        include __DIR__ . "/../views/notifications.php";
+        break;
+
+    case "settings":
+        if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
+        require_once __DIR__ . "/../controllers/SystemSettingsController.php";
+        $settingsController = new SystemSettingsController();
+        $settingsController->index();
+        break;
+
+    case "expenses":
+        if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
+        include __DIR__ . "/../views/expenses.php";
+        break;
+
+    case "activity":
+        if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
+        include __DIR__ . "/../views/Activity.php";
+        break;
+
+    case "usermanual":
+        if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
+        include __DIR__ . "/../views/usermanual.php";
+        break;
+
+    case "admin":
+        if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
+        include __DIR__ . "/../views/admin.php";
+        break;
+
+    case "return-item":
+        if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
+        require_once __DIR__ . "/../controllers/SalesController.php";
+        include __DIR__ . "/../views/return_item.php";
+        break;
+
+    case "return-sale":
+        if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
+        include __DIR__ . "/../views/return_sale.php";
+        break;
+
+    case "search-expired":
+        if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
+        include __DIR__ . "/../views/search-expired.php";
+        break;
+
+    case "change-password":
+        if (!isset($_SESSION['user_id'])) { header("Location: /user/login"); exit; }
+        include __DIR__ . "/../views/change_password.php";
+        break;
+
+    case "checkout":
+        $salesController->checkout();
+        break;
+
+    case "export-sales":
+        include __DIR__ . "/../views/exportSales.php";
+        break;
+
     default:
         if (empty($url[0]) || $url[0] === '') {
             header("Location: /user/login");
